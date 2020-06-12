@@ -1,4 +1,4 @@
-# Boas vindas ao repositório do projeto de Context API e Hooks!
+# Boas vindas ao repositório do projeto StarWars Datatable Filters em Context API e Hooks!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo e, se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
 
@@ -6,32 +6,26 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ## O que deverá ser desenvolvido
 
-Você vai refatorar um projeto em React desenvolvido no módulo 16, [Starwars Datatable Filters](https://github.com/tryber/sd-02-block16-react-redux-starwars-datatable-filters), substituindo Redux por **Context API e Hooks** para controlar estado.
-
-Você também adicionará testes a sua aplicação antes de refatorá-la, de forma a garantir o mesmo comportamento após a transição de Redux para **Context API e Hooks**.
+Você vai refatorar o projeto **StarWars Datatable Filters em React com Redux** (ou criar um do zero), substituindo Redux por **Context API e Hooks** para controlar estado.
 
 ## Desenvolvimento
 
-Este repositório já contém um _template_ de uma aplicação React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você deverá copiar os arquivos que criou ou modificou no projeto anterior para este repositório. Veja [aqui](#copiando-os-arquivos-entre-projetos) instruções de como fazer isso de uma forma fácil.
+Este repositório já contém um _template_ de uma aplicação React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você **poderá** copiar os arquivos que criou ou modificou no projeto anterior para este repositório. Veja [aqui](#copiando-os-arquivos-entre-projetos) instruções de como fazer isso de uma forma fácil.
 
 Caso não tenha realizado o projeto anterior, você deverá implementar todos os requisitos obrigatórios do projeto anterior e os novos requisitos do projeto atual. Contudo, não é necessário primeiro desenvolver o projeto com Redux para então substituí-lo por **Context API e Hooks**.
 
-Um dos requisitos deste projeto é a adição de testes. Recomendamos que você escreva os testes e garanta uma boa cobertura antes de começar a trabalhar na refatoração. Dessa forma, durante o desenvolvimento, você terá segurança de que sua aplicação continua funcionando conforme especificado, sem precisar testá-la manualmente a todo momento. Além disso, você treinará escrever testes baseados em comportamento - se seus testes começaram a falhar após a transição, é um sinal de que eram dependentes de implementação e não do comportamento da sua aplicação. Este processo - escrever testes agnósticos em relação à implementação - não é fácil, mas é uma habilidade importante de se desenvolver.
-
 ### Copiando os arquivos entre projetos
 
-Supondo que seus projetos passado e atual estejam, respectivamente, nos diretórios `sd-02-block16-react-redux-starwars-datatable-filters` e `sd-02-block18-react-context-hooks-starwars-datatable-filters` dentro do mesmo diretório em sua máquina, execute o comando a seguir para copiar entre projetos.
+Supondo que seus projetos passado e atual estejam, respectivamente, nos diretórios `sd-0x-project-react-redux-starwars-datatable-filters` e `sd-0x-project-react-context-hooks-starwars-datatable-filters` dentro do mesmo diretório em sua máquina, execute o comando a seguir para copiar entre projetos.
 
 ```shell
 cd <diretorio onde estão seus projetos>
-cp -av sd-02-block16-react-redux-starwars-datatable-filters/src/ sd-02-block18-react-context-hooks-starwars-datatable-filters/src/
+cp -av sd-0x-project-react-redux-starwars-datatable-filters/src/ sd-0x-project-react-context-hooks-starwars-datatable-filters/src/
 ```
 
 Atente para a barra (`/`) ao final dos nomes dos diretórios. Adapte os comandos com os nomes dos diretórios onde estão seus repositórios em sua máquina local.
 
 ## Requisitos do projeto
-
-A seguir, estão listados todos os requisitos do projeto. Para conveniência, os requisitos do projeto 16 foram transcritos aqui, com as devidas adaptações, quando necessário, para o contexto do atual projeto.
 
 ### 1 - A cobertura de testes do projeto deve ser maior que ou igual a 90%
 
@@ -194,26 +188,24 @@ export default StarWarsContext;
         * `git status` (deve aparecer listado o arquivo _src/context/StarWarsContext.js_ em verde)
   * Faça o `commit` inicial
       * Exemplo:
-        * `git commit -m 'iniciando o projeto 18. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
+        * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
         * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
 6. Adicione a sua branch com o novo `commit` ao repositório remoto
   * Usando o exemplo anterior: `git push -u origin joaozinho-react-context-hooks-starwars-datatable-filters`
 
 7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-02-block18-react-context-hooks-starwars-datatable-filters/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-react-context-hooks-starwars-datatable-filters/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-02-block18-react-context-hooks-starwars-datatable-filters/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-react-context-hooks-starwars-datatable-filters/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
 ### DURANTE O DESENVOLVIMENTO
-
-* ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA COM O SEU NOME** ⚠
 
 * Faça `commits` das alterações que você fizer no código regularmente
 
@@ -235,7 +227,7 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-02`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
