@@ -47,11 +47,11 @@ export default StarWarsContext;
 
 5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
   * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (deve aparecer listado o arquivo _src/context/StarWarsContext.js_ em vermelho)
+    * Exemplo: `git status` (deve aparecer listado o arquivo `src/context/StarWarsContext.js` em vermelho)
   * Adicione o arquivo alterado ao _stage_ do Git
       * Exemplo:
         * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (deve aparecer listado o arquivo _src/context/StarWarsContext.js_ em verde)
+        * `git status` (deve aparecer listado o arquivo `src/context/StarWarsContext.js` em verde)
   * Faça o `commit` inicial
       * Exemplo:
         * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
@@ -209,7 +209,7 @@ Cada requisito mostra em seu exemplo somente os campos do estado relacionados à
 
 ### DURANTE O DESENVOLVIMENTO
 
-* ⚠ **RECOMENDAMOS QUE VOCÊ FIQUE ATENTO ÀS ISSUES DO CODE CLIMATE, PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO. A PARTIR DO PRÓXIMO BLOCO SEU PROJETO SOMENTE SERÁ AVALIADO SE NÃO TIVER ISSUES NO CODE CLIMATE!** ⚠
+⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo CodeClimate estão resolvidas! ⚠
 
 * Faça `commits` das alterações que você fizer no código regularmente;
 
