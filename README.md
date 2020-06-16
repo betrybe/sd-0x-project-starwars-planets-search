@@ -94,25 +94,11 @@ Atente para a barra (`/`) ao final dos nomes dos diretórios. Adapte os comandos
 
 ## Requisitos do projeto
 
-### 1 - A cobertura de testes do projeto deve ser maior que ou igual a 90%
-
-### 2 - O projeto deve ser feito, necessariamente, utilizando Context API e Hooks para controlar estado
-
-Não pode haver nenhum tipo de código Redux no seu projeto - _stores_, _actions_, _reducers_, _action creators_. Lembre-se de desinstalar o **Redux** e quaisquer dependências relacionadas após a conclusão, caso seu projeto dê continuidade ao projeto anterior.
-
-O estado especificado nos requisitos deve ser controlado fazendo uso **unicamente** de **Context API** e **Hooks**.
-
-Contudo, caso julgue necessário manter informações de estado além do especificado nestes requisitos, você poderá decidir entre armazenar tal estado em um componente ou em um contexto, mas não no **Redux**.
-
-### 3 - Todos os componentes da aplicação devem ser componentes de função
-
-O uso de **Hooks** torna desnecessária a criação de componentes de classe. Portanto, você deverá converter quaisquer componentes de classe que tenha escrito para componentes de função.
-
-### 4 - Fazer uma requisição para o endpoint `/planets` da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna `residents`
+### 1 - Fazer uma requisição para o endpoint `/planets` da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna `residents`
 
 A tabela deve ser renderizada por um componente chamado `<Table />`. Os dados recebidos da API devem ser salvos num campo chamado data do contexto e é daí que a tabela deve lê-los. A requisição deve ser feita num componente separado do componente da tabela.
 
-### 5 - Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado
+### 2 - Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado
 
 Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida que o nome é digitado, sem ter que apertar um botão para efetuar a filtragem. Por exemplo, se digitar "Tatoo", o planeta "Tatooine" deve ser exibido. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação e o texto digitado deve ser salvo num campo `filters: [{ name }]`. Por exemplo:
 
@@ -126,7 +112,7 @@ Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida 
 }
 ```
 
-### 6 - Sua página deve ter um filtro para valores numéricos
+### 3 - Sua página deve ter um filtro para valores numéricos
 
 Ele funcionará com três seletores:
 
@@ -154,7 +140,7 @@ A combinação desses três seletores deve filtrar os dados da tabela de acordo 
 }
 ```
 
-### 7 - Sua página deverá ser carregada com somente um filtro de valores numéricos
+### 4 - Sua página deverá ser carregada com somente um filtro de valores numéricos
 
 Caso um filtro seja totalmente preenchido, um novo filtro de valores numéricos deve ser carregado. Este novo filtro não deve incluir quaisquer colunas que já tenham sido selecionadas em filtros de valores numéricos anteriores. Caso todas as colunas já tenham sido inclusas em filtros anteriores, não deve ser carregado um novo filtro. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação.
 
@@ -182,13 +168,13 @@ Por exemplo: O primeiro filtro tem as seguintes seleções: `population | maior 
 ```
 
 
-### 8 - Cada filtro de valores numéricos deve ter um ícone de `X` que, ao ser clicado, o apaga e desfaz suas filtragens dos dados da tabela
+### 5 - Cada filtro de valores numéricos deve ter um ícone de `X` que, ao ser clicado, o apaga e desfaz suas filtragens dos dados da tabela
 
 A coluna que este filtro selecionava deve passar a ficar disponível nos dropdowns dos demais filtros já presentes na tela. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação.
 
 ## BÔNUS
 
-### 9 - As colunas da tabela devem ser ordenáveis de forma ascendente ou descendente
+### 6 - As colunas da tabela devem ser ordenáveis de forma ascendente ou descendente
 
 A informação acerca da ordenação das colunas deve ser armazenada nos campos `filters: [{ column: 'Name', order: 'ASC'}]`, onde o campo `column` representa o nome da coluna a ordenar e `order` representa a ordenação, sendo 'ASC' ascendente e 'DESC' descendente. Por padrão, a tabela começa ordenada pela coluna 'Name' em ordem ascendente. Por exemplo:
 
