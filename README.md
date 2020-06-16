@@ -114,21 +114,20 @@ Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida 
 }
 ```
 
-O campo de texto deve possuir a propriedade `data-testid='input-filter-name'` para que a avaliação automatizada funcione.
+O campo de texto deve possuir a propriedade `data-testid='name-filter'` para que a avaliação automatizada funcione.
 
 ### 3 - Sua página deve ter um filtro para valores numéricos
 
 Ele funcionará com três seletores:
 
-- O primeiro deve abrir um dropdown que permita a quem usa selecionar uma das seguintes colunas: `population`, `orbital_period`, `diameter`, `rotation_period` e `surface_water`.
-- O segundo deve determinar se a faixa de valor será `Maior que`, `Menor que` ou `Igual a` o número que virá a seguir.
-- O terceiro deve ser uma caixa de texto que só aceita números.
+  - O primeiro deve abrir um dropdown que permita a quem usa selecionar uma das seguintes colunas: `population`, `orbital_period`, `diameter`, `rotation_period` e `surface_water`. Deve ser uma tag `select` com a propriedade `data-testid='column-filter'`;
+  - O segundo deve determinar se a faixa de valor será `maior que`, `menor que` ou `igual a` o numero que virá a seguir. Uma tag `select` com a propriedade `data-testid='comparison-filter'`;
+  - O terceiro deve ser uma caixa de texto que só aceita números. Essa caixa deve ser uma tag `input` com a propriedade `data-testid='value-filter'`;
+  - Deve haver um botão para acionar o filtro, com a propriedade `data-testid='button-filter'`.
 
 A combinação desses três seletores deve filtrar os dados da tabela de acordo com a coluna correspondente e com os valores escolhidos. Por exemplo:
-
-- A seleção `population | maior que | 100000` - Seleciona somente planetas com mais de 100000 habitantes.
-- A seleção `diameter | menor que | 8000` - Seleciona somente planetas com diâmetro menor que 8000.
-- Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação. No contexto, esses valores devem ser salvos nos campos `filters [{ numericValues: { column, comparison, value } }]`. Por exemplo:
+  - A seleção `population | maior que | 100000` - Seleciona somente planetas com mais de 100000 habitantes.
+  - A seleção `diameter | menor que | 8000` - Seleciona somente planetas com diâmetro menor que 8000.
 
 ```javascript
 {

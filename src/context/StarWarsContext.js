@@ -116,7 +116,7 @@ const StarWarsProvider = ({ children }) => {
     <div>
       <select
         onChange={(e) => setColumn(e.target.value)}
-        data-testid="boxColumn"
+        data-testid="column-filter"
         name="column"
         value={column}
       >
@@ -124,7 +124,7 @@ const StarWarsProvider = ({ children }) => {
         {columnsSelect.map((item) => {
           const visual = item.substring(0, 1).toUpperCase()
             .concat(item.substring(1)).replace('_', ' ');
-          return <option key={item} value={item}>{visual}</option>;
+          return <option key={item} value={item}>{item}</option>;
         })}
       </select>
     </div>
@@ -134,14 +134,14 @@ const StarWarsProvider = ({ children }) => {
     <div>
       <select
         onChange={(e) => setComparison(e.target.value)}
-        data-testid="boxComparison"
+        data-testid="comparison-filter"
         name="comparison"
         value={comparison}
       >
         <option value="" hidden>Escolha uma comparador</option>
-        <option value="maior que">Maior que</option>
-        <option value="menor que">Menor que</option>
-        <option value="igual a">Igual a</option>
+        <option value="maior que">maior que</option>
+        <option value="menor que">menor que</option>
+        <option value="igual a">igual a</option>
       </select>
     </div>
   );
@@ -150,7 +150,7 @@ const StarWarsProvider = ({ children }) => {
     <div>
       <input
         onChange={(e) => setValue(e.target.value)}
-        data-testid="boxValue"
+        data-testid="value-filter"
         type="number"
         placeholder="Digite aqui"
         name="value"
@@ -184,7 +184,7 @@ const StarWarsProvider = ({ children }) => {
     return (
       <button
         onClick={() => createFilter()}
-        data-testid="buttonFilter"
+        data-testid="button-filter"
         type="button"
         disabled={(isDisabled)}
       >
