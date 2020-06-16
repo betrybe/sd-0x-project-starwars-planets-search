@@ -98,6 +98,8 @@ Atente para a barra (`/`) ao final dos nomes dos diretórios. Adapte os comandos
 
 A tabela deve ser renderizada por um componente chamado `<Table />`. Os dados recebidos da API devem ser salvos num campo chamado data do contexto e é daí que a tabela deve lê-los. A requisição deve ser feita num componente separado do componente da tabela.
 
+A tabela deve ter uma primeira linha com os headers e as demais com as informações de cada campo.
+
 ### 2 - Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado
 
 Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida que o nome é digitado, sem ter que apertar um botão para efetuar a filtragem. Por exemplo, se digitar "Tatoo", o planeta "Tatooine" deve ser exibido. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação e o texto digitado deve ser salvo num campo `filters: [{ name }]`. Por exemplo:
@@ -111,6 +113,8 @@ Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida 
   ]
 }
 ```
+
+O campo de texto deve possuir a propriedade `data-testid='input-filter-name'` para que a avaliação automatizada funcione.
 
 ### 3 - Sua página deve ter um filtro para valores numéricos
 
