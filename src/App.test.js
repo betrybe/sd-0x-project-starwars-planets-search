@@ -237,7 +237,41 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
   });
 });
 
-describe.skip('Sua página deverá ser carregada com somente um filtro de valores numéricos');
+describe('Sua página não deve utilizar filtros repetidos', () => {
+  beforeAll(mockFetch);
+  beforeEach(cleanup);
+
+  it('filtra por população e o remove das opções', async () => {
+    await act(async () => {
+      render(<App />);
+    });
+
+    let column = null;
+    let foundColumnFilter = null;
+
+    column = await screen.findByTestId(COLUMN_FILTER_SELECTOR);
+    expect(column).toHaveProperty('nodeName', 'SELECT');
+    foundColumnFilter = Array.from(column.children).map(child => {
+      expect(child).toHaveProperty('nodeName', 'OPTION');
+      return child.innerHTML;
+    });
+    expect(foundColumnFilter).toEqual(expect.arrayContaining(['population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water']));
+
+    fireEvent.change(await screen.findByTestId(COLUMN_FILTER_SELECTOR), { target: { value: 'population' }});
+    fireEvent.change(await screen.findByTestId(COMPARISON_FILTER_SELECTOR), { target: { value: 'maior que' }});
+    fireEvent.change(await screen.findByTestId(VALUE_FILTER_SELECTOR), { target: { value: '8000' }});
+    fireEvent.click(await screen.findByTestId(BUTTON_FILTER_SELECTOR));
+    expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(8);
+
+    column = await screen.findByTestId(COLUMN_FILTER_SELECTOR);
+    expect(column).toHaveProperty('nodeName', 'SELECT');
+    foundColumnFilter = Array.from(column.children).map(child => {
+      expect(child).toHaveProperty('nodeName', 'OPTION');
+      return child.innerHTML;
+    });
+    expect(foundColumnFilter).toEqual(expect.arrayContaining(['orbital_period', 'diameter', 'rotation_period', 'surface_water']));
+  });
+});
 
 describe('Cada filtro de valores numéricos deve ter um ícone de `X` que, ao ser clicado, o apaga e desfaz suas filtragens dos dados da tabela', () => {
   beforeAll(mockFetch);

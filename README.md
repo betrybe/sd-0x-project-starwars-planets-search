@@ -143,7 +143,7 @@ A combinação desses três seletores deve filtrar os dados da tabela de acordo 
 }
 ```
 
-### 4 - Sua página deverá ser carregada com somente um filtro de valores numéricos
+### 4 - Sua página não deve utilizar filtros repetidos
 
 Caso um filtro seja totalmente preenchido, um novo filtro de valores numéricos deve ser carregado. Este novo filtro não deve incluir quaisquer colunas que já tenham sido selecionadas em filtros de valores numéricos anteriores. Caso todas as colunas já tenham sido inclusas em filtros anteriores, não deve ser carregado um novo filtro. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação.
 
