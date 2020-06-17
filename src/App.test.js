@@ -13,6 +13,9 @@ const COMPARISON_FILTER_SELECTOR = 'comparison-filter';
 const VALUE_FILTER_SELECTOR = 'value-filter';
 const BUTTON_FILTER_SELECTOR = 'button-filter';
 const REMOVE_FILTER_SELECTOR = 'filter';
+const SORT_COLUMN_SELECTOR = 'column-sort';
+const SORT_ORDER_SELECTOR = 'column-sort-input';
+const SORT_APPLY_SELECTOR = 'column-sort-button';
 
 const mockFetch = () => {
   jest.spyOn(global, 'fetch')
@@ -321,3 +324,5 @@ describe('Cada filtro de valores numéricos deve ter um ícone de `X` que, ao se
     expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(11);
   });
 });
+
+describe.skip('As colunas da tabela devem ser ordenáveis de forma ascendente ou descendente');

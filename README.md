@@ -178,20 +178,26 @@ A coluna que este filtro selecionava deve passar a ficar disponível nos dropdow
 
 ### 6 - As colunas da tabela devem ser ordenáveis de forma ascendente ou descendente
 
-A informação acerca da ordenação das colunas deve ser armazenada nos campos `filters: [{ column: 'Name', order: 'ASC'}]`, onde o campo `column` representa o nome da coluna a ordenar e `order` representa a ordenação, sendo 'ASC' ascendente e 'DESC' descendente. Por padrão, a tabela começa ordenada pela coluna 'Name' em ordem ascendente. Por exemplo:
+A informação acerca da ordenação das colunas deve ser armazenada nos campos `filters: { filterByName: { name }, filterByNumericValues = [], order: { column: 'Name', sort: 'ASC'} }`, o campo column representa o nome da coluna a ordenar e a ordem representa a ordenação, sendo 'ASC' ascendente e 'DESC' descendente. Por padrão, a tabela começa ordenada pela coluna 'Name' em ordem ascendente. Por exemplo:
 
 ```javascript
 {
-  filters: [
-    {
+  filters: {
+    filterByName: {
+      name: ''
+    },
+    filterByNumericValues : [],
+    order: {
       column: 'Name',
-      order: 'ASC',
+      sort: 'ASC',
     }
-  ]
+  }
 }
 ```
 
-Cada requisito mostra em seu exemplo somente os campos do estado relacionados àquele requisito. O resultado final acumulará campos dos vários exemplos.
+Essa ordenação deve ser feita via filtro: um dropdown selecionará a coluna a basear a ordenação e um par de radio buttons determinará se esta é ascendente ou descendente.
+
+O dropdown deve ser um elemento `select` com a propriedade `data-testid='column-sort'`, com as opções das colunas escolhíveis em seu interior. Deve haver também, dois `inputs` de tipo `radio`, com propriedade `data-testid='column-sort-input'`, para definir o sentido da ordenação (com `value` sendo `ASC` ou `DESC`) e um botão para submeter a ordenação, com uma tag `button` e a propriedade `data-testid='column-sort-button'`.
 
 ---
 
