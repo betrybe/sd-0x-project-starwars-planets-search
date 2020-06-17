@@ -12,6 +12,7 @@ const COLUMN_FILTER_SELECTOR = 'column-filter';
 const COMPARISON_FILTER_SELECTOR = 'comparison-filter';
 const VALUE_FILTER_SELECTOR = 'value-filter';
 const BUTTON_FILTER_SELECTOR = 'button-filter';
+const REMOVE_FILTER_SELECTOR = 'filter';
 
 const mockFetch = () => {
   jest.spyOn(global, 'fetch')
@@ -206,7 +207,6 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
     fireEvent.change(await screen.findByTestId(VALUE_FILTER_SELECTOR), { target: { value: '40' }});
     fireEvent.click(await screen.findByTestId(BUTTON_FILTER_SELECTOR));
 
-
     expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(7);
   });
 
@@ -219,7 +219,6 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
     fireEvent.change(await screen.findByTestId(COMPARISON_FILTER_SELECTOR), { target: { value: 'maior que' }});
     fireEvent.change(await screen.findByTestId(VALUE_FILTER_SELECTOR), { target: { value: '8900' }});
     fireEvent.click(await screen.findByTestId(BUTTON_FILTER_SELECTOR));
-
 
     expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(8);
   });
@@ -234,7 +233,57 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
     fireEvent.change(await screen.findByTestId(VALUE_FILTER_SELECTOR), { target: { value: '200000' }});
     fireEvent.click(await screen.findByTestId(BUTTON_FILTER_SELECTOR));
 
-
     expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(2);
+  });
+});
+
+describe.skip('Sua página deverá ser carregada com somente um filtro de valores numéricos');
+
+describe('Cada filtro de valores numéricos deve ter um ícone de `X` que, ao ser clicado, o apaga e desfaz suas filtragens dos dados da tabela', () => {
+  beforeAll(mockFetch);
+  beforeEach(cleanup);
+
+  it('adiciona e remove um filtro', async () => {
+    await act(async () => {
+      render(<App />);
+    });
+    expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(11);
+
+    fireEvent.change(await screen.findByTestId(COLUMN_FILTER_SELECTOR), { target: { value: 'diameter' }});
+    fireEvent.change(await screen.findByTestId(COMPARISON_FILTER_SELECTOR), { target: { value: 'maior que' }});
+    fireEvent.change(await screen.findByTestId(VALUE_FILTER_SELECTOR), { target: { value: '8900' }});
+    fireEvent.click(await screen.findByTestId(BUTTON_FILTER_SELECTOR));
+    expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(8);
+
+    const filters = await screen.getAllByTestId(REMOVE_FILTER_SELECTOR);
+    filters.map(filter => {
+      fireEvent.click(filter.querySelector('button'));
+    });
+    expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(11);
+  });
+
+  it('adiciona e remove dois filtros', async () => {
+    await act(async () => {
+      render(<App />);
+    });
+    expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(11);
+
+    fireEvent.change(await screen.findByTestId(COLUMN_FILTER_SELECTOR), { target: { value: 'diameter' }});
+    fireEvent.change(await screen.findByTestId(COMPARISON_FILTER_SELECTOR), { target: { value: 'maior que' }});
+    fireEvent.change(await screen.findByTestId(VALUE_FILTER_SELECTOR), { target: { value: '8900' }});
+    fireEvent.click(await screen.findByTestId(BUTTON_FILTER_SELECTOR));
+    expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(8);
+
+    fireEvent.change(await screen.findByTestId(COLUMN_FILTER_SELECTOR), { target: { value: 'population' }});
+    fireEvent.change(await screen.findByTestId(COMPARISON_FILTER_SELECTOR), { target: { value: 'menor que' }});
+    fireEvent.change(await screen.findByTestId(VALUE_FILTER_SELECTOR), { target: { value: '1000000' }});
+    fireEvent.click(await screen.findByTestId(BUTTON_FILTER_SELECTOR));
+    expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(3);
+
+    const filters = await screen.getAllByTestId(REMOVE_FILTER_SELECTOR);
+    filters.map(filter => {
+      fireEvent.click(filter.querySelector('button'));
+    });
+    expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(11);
   });
 });

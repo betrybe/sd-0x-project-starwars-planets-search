@@ -11,7 +11,7 @@ const SavedFilters = () => {
       {onlyNumeric.map((filter) => {
         const { column, comparison, value } = filter.numericValues;
         return (
-          <div className="saved-filters-container" key={column}>
+          <div className="saved-filters-container" key={column} data-testid="filter">
             <p
               data-testid={`saved-filters-title-${column}`}
               className="saved-filters-title"
