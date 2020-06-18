@@ -96,10 +96,26 @@ const StarWarsProvider = ({ children }) => {
       (planet) => planet.name.toLowerCase().includes(name.toLowerCase()),
     );
     return (
-      filterPlanet.map((info) => (
+      filterPlanet.sort((p1, p2) => {
+        let orb1 = parseInt(p1.orbital_period);
+        let orb2 = parseInt(p2.orbital_period);
+
+        if (orb1 === orb2) {
+          return 0;
+        } else if (orb1 < orb2) {
+          return 1;
+        } else {
+          return -1;
+        }
+      }).map((info) => (
         <tbody key={info.name}>
           <tr>
             {Object.values(info).map((body, idx) => {
+              if (idx === 0) {
+                return (
+                  <td className="tableData" key={body} data-testid="planet-name">{body}</td>
+                );
+              }
               if (idx !== 9) {
                 return (
                   <td className="tableData" key={body}>{body}</td>
