@@ -96,21 +96,21 @@ Atente para a barra (`/`) ao final dos nomes dos diretórios. Adapte os comandos
 
 ### 1 - Fazer uma requisição para o endpoint `/planets` da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna `residents`
 
-A tabela deve ser renderizada por um componente chamado `<Table />`. Os dados recebidos da API devem ser salvos num campo chamado data do contexto e é daí que a tabela deve lê-los. A requisição deve ser feita num componente separado do componente da tabela.
+A tabela deve ser renderizada por um componente chamado `<Table />`. Os dados recebidos da API devem ser salvos num campo chamado `data` do contexto e é daí que a tabela deve lê-los. A requisição deve ser feita num componente separado do componente da tabela.
 
 A tabela deve ter uma primeira linha com os headers e as demais com as informações de cada campo.
 
 ### 2 - Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado
 
-Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida que o nome é digitado, sem ter que apertar um botão para efetuar a filtragem. Por exemplo, se digitar "Tatoo", o planeta "Tatooine" deve ser exibido. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação e o texto digitado deve ser salvo num campo `filters: [{ name }]`. Por exemplo:
+Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida que o nome é digitado, sem ter que apertar um botão para efetuar a filtragem. Por exemplo, se digitar "Tatoo", o planeta "Tatooine" deve ser exibido. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação e o texto digitado deve ser salvo num campo `filters: { filterByName: { name } }`. Por exemplo:
 
 ```javascript
 {
-  filters: [
-    {
-      name: 'Tatoo',
+  filters: {
+    filterByName: {
+      name: 'Tatoo'
     }
-  ]
+  }
 }
 ```
 
@@ -129,17 +129,24 @@ A combinação desses três seletores deve filtrar os dados da tabela de acordo 
   - A seleção `population | maior que | 100000` - Seleciona somente planetas com mais de 100000 habitantes.
   - A seleção `diameter | menor que | 8000` - Seleciona somente planetas com diâmetro menor que 8000.
 
+Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação. No contexto, esses valores devem ser salvos nos campos `filters { filterByName: { name }, filterByNumericValues: [{ column, comparison, value }] }`. Por exemplo:
+
 ```javascript
 {
-  filters: [
+  filters:
     {
-      numericValues: {
-        column: 'population',
-        comparison: 'maior que',
-        value: '100000',
-      }
+      filterByName: {
+        name: ''
+      },
+      filterByNumericValues: [
+        {
+          column: 'population',
+          comparison: 'maior que',
+          value: '100000',
+        }
+      ]
     }
-  ]
+  }
 }
 ```
 
@@ -151,22 +158,23 @@ Por exemplo: O primeiro filtro tem as seguintes seleções: `population | maior 
 
 ```javascript
 {
-  filters: [
-    {
-      numericValues: {
+  filters: {
+    filterByName: {
+      name: ''
+    },
+    filterByNumericValues: [
+      {
         column: 'population',
         comparison: 'maior que',
         value: '100000',
-      }
-    },
-    {
-      numericValues: {
+      },
+      {
         column: 'diameter',
         comparison: 'menor que',
         value: '8000',
       }
-    }
-  ]
+    ]
+  }
 }
 ```
 
@@ -197,7 +205,9 @@ A informação acerca da ordenação das colunas deve ser armazenada nos campos 
 
 Essa ordenação deve ser feita via filtro: um dropdown selecionará a coluna a basear a ordenação e um par de radio buttons determinará se esta é ascendente ou descendente.
 
-O dropdown deve ser um elemento `select` com a propriedade `data-testid='column-sort'`, com as opções das colunas escolhíveis em seu interior. Deve haver também, dois `inputs` de tipo `radio`, com propriedade `data-testid='column-sort-input'`, para definir o sentido da ordenação (com `value` sendo `ASC` ou `DESC`) e um botão para submeter a ordenação, com uma tag `button` e a propriedade `data-testid='column-sort-button'`.
+O dropdown deve ser um elemento `select` com a propriedade `data-testid='column-sort'`, com as opções das colunas escolhíveis em seu interior. Deve haver também, dois `inputs` de tipo `radio`, com propriedades `data-testid='column-sort-input-asc'` e `data-testid='column-sort-input-desc'`, para definir o sentido da ordenação (com `value` sendo `ASC` ou `DESC`) e um botão para submeter a ordenação, com uma tag `button` e a propriedade `data-testid='column-sort-button'`.
+
+Adicione o atributo `data-testid` com o valor `planet-name` em todos os elementos da tabela que possuem o nome de um planeta.
 
 ---
 
