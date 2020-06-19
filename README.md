@@ -94,67 +94,63 @@ Atente para a barra (`/`) ao final dos nomes dos diretórios. Adapte os comandos
 
 ## Requisitos do projeto
 
-### 1 - A cobertura de testes do projeto deve ser maior que ou igual a 90%
+### 1 - Fazer uma requisição para o endpoint `/planets` da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna `residents`
 
-### 2 - O projeto deve ser feito, necessariamente, utilizando Context API e Hooks para controlar estado
+A tabela deve ser renderizada por um componente chamado `<Table />`. Os dados recebidos da API devem ser salvos num campo chamado `data` do contexto e é daí que a tabela deve lê-los. A requisição deve ser feita num componente separado do componente da tabela.
 
-Não pode haver nenhum tipo de código Redux no seu projeto - _stores_, _actions_, _reducers_, _action creators_. Lembre-se de desinstalar o **Redux** e quaisquer dependências relacionadas após a conclusão, caso seu projeto dê continuidade ao projeto anterior.
+A tabela deve ter uma primeira linha com os headers e as demais com as informações de cada campo.
 
-O estado especificado nos requisitos deve ser controlado fazendo uso **unicamente** de **Context API** e **Hooks**.
+### 2 - Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado
 
-Contudo, caso julgue necessário manter informações de estado além do especificado nestes requisitos, você poderá decidir entre armazenar tal estado em um componente ou em um contexto, mas não no **Redux**.
-
-### 3 - Todos os componentes da aplicação devem ser componentes de função
-
-O uso de **Hooks** torna desnecessária a criação de componentes de classe. Portanto, você deverá converter quaisquer componentes de classe que tenha escrito para componentes de função.
-
-### 4 - Fazer uma requisição para o endpoint `/planets` da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna `residents`
-
-A tabela deve ser renderizada por um componente chamado `<Table />`. Os dados recebidos da API devem ser salvos num campo chamado data do contexto e é daí que a tabela deve lê-los. A requisição deve ser feita num componente separado do componente da tabela.
-
-### 5 - Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado
-
-Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida que o nome é digitado, sem ter que apertar um botão para efetuar a filtragem. Por exemplo, se digitar "Tatoo", o planeta "Tatooine" deve ser exibido. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação e o texto digitado deve ser salvo num campo `filters: [{ name }]`. Por exemplo:
+Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida que o nome é digitado, sem ter que apertar um botão para efetuar a filtragem. Por exemplo, se digitar "Tatoo", o planeta "Tatooine" deve ser exibido. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação e o texto digitado deve ser salvo num campo `filters: { filterByName: { name } }`. Por exemplo:
 
 ```javascript
 {
-  filters: [
-    {
-      name: 'Tatoo',
+  filters: {
+    filterByName: {
+      name: 'Tatoo'
     }
-  ]
+  }
 }
 ```
 
-### 6 - Sua página deve ter um filtro para valores numéricos
+O campo de texto deve possuir a propriedade `data-testid='name-filter'` para que a avaliação automatizada funcione.
+
+### 3 - Sua página deve ter um filtro para valores numéricos
 
 Ele funcionará com três seletores:
 
-- O primeiro deve abrir um dropdown que permita a quem usa selecionar uma das seguintes colunas: `population`, `orbital_period`, `diameter`, `rotation_period` e `surface_water`.
-- O segundo deve determinar se a faixa de valor será `Maior que`, `Menor que` ou `Igual a` o número que virá a seguir.
-- O terceiro deve ser uma caixa de texto que só aceita números.
+  - O primeiro deve abrir um dropdown que permita a quem usa selecionar uma das seguintes colunas: `population`, `orbital_period`, `diameter`, `rotation_period` e `surface_water`. Deve ser uma tag `select` com a propriedade `data-testid='column-filter'`;
+  - O segundo deve determinar se a faixa de valor será `maior que`, `menor que` ou `igual a` o numero que virá a seguir. Uma tag `select` com a propriedade `data-testid='comparison-filter'`;
+  - O terceiro deve ser uma caixa de texto que só aceita números. Essa caixa deve ser uma tag `input` com a propriedade `data-testid='value-filter'`;
+  - Deve haver um botão para acionar o filtro, com a propriedade `data-testid='button-filter'`.
 
 A combinação desses três seletores deve filtrar os dados da tabela de acordo com a coluna correspondente e com os valores escolhidos. Por exemplo:
+  - A seleção `population | maior que | 100000` - Seleciona somente planetas com mais de 100000 habitantes.
+  - A seleção `diameter | menor que | 8000` - Seleciona somente planetas com diâmetro menor que 8000.
 
-- A seleção `population | maior que | 100000` - Seleciona somente planetas com mais de 100000 habitantes.
-- A seleção `diameter | menor que | 8000` - Seleciona somente planetas com diâmetro menor que 8000.
-- Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação. No contexto, esses valores devem ser salvos nos campos `filters [{ numericValues: { column, comparison, value } }]`. Por exemplo:
+Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação. No contexto, esses valores devem ser salvos nos campos `filters { filterByName: { name }, filterByNumericValues: [{ column, comparison, value }] }`. Por exemplo:
 
 ```javascript
 {
-  filters: [
+  filters:
     {
-      numericValues: {
-        column: 'population',
-        comparison: 'maior que',
-        value: '100000',
-      }
+      filterByName: {
+        name: ''
+      },
+      filterByNumericValues: [
+        {
+          column: 'population',
+          comparison: 'maior que',
+          value: '100000',
+        }
+      ]
     }
-  ]
+  }
 }
 ```
 
-### 7 - Sua página deverá ser carregada com somente um filtro de valores numéricos
+### 4 - Sua página não deve utilizar filtros repetidos
 
 Caso um filtro seja totalmente preenchido, um novo filtro de valores numéricos deve ser carregado. Este novo filtro não deve incluir quaisquer colunas que já tenham sido selecionadas em filtros de valores numéricos anteriores. Caso todas as colunas já tenham sido inclusas em filtros anteriores, não deve ser carregado um novo filtro. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação.
 
@@ -162,48 +158,56 @@ Por exemplo: O primeiro filtro tem as seguintes seleções: `population | maior 
 
 ```javascript
 {
-  filters: [
-    {
-      numericValues: {
+  filters: {
+    filterByName: {
+      name: ''
+    },
+    filterByNumericValues: [
+      {
         column: 'population',
         comparison: 'maior que',
         value: '100000',
-      }
-    },
-    {
-      numericValues: {
+      },
+      {
         column: 'diameter',
         comparison: 'menor que',
         value: '8000',
       }
-    }
-  ]
+    ]
+  }
 }
 ```
 
+### 5 - Cada filtro de valores numéricos deve ter um ícone de `X` que, ao ser clicado, o apaga e desfaz suas filtragens dos dados da tabela
 
-### 8 - Cada filtro de valores numéricos deve ter um ícone de `X` que, ao ser clicado, o apaga e desfaz suas filtragens dos dados da tabela
-
-A coluna que este filtro selecionava deve passar a ficar disponível nos dropdowns dos demais filtros já presentes na tela. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação.
+A coluna que este filtro selecionava deve passar a ficar disponível nos dropdowns dos demais filtros já presentes na tela. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação. Cada filtro deve possuir a propriedade `data-testid='filter'`, com um `button` em seu interior com o texto `X`.
 
 ## BÔNUS
 
-### 9 - As colunas da tabela devem ser ordenáveis de forma ascendente ou descendente
+### 6 - As colunas da tabela devem ser ordenáveis de forma ascendente ou descendente
 
-A informação acerca da ordenação das colunas deve ser armazenada nos campos `filters: [{ column: 'Name', order: 'ASC'}]`, onde o campo `column` representa o nome da coluna a ordenar e `order` representa a ordenação, sendo 'ASC' ascendente e 'DESC' descendente. Por padrão, a tabela começa ordenada pela coluna 'Name' em ordem ascendente. Por exemplo:
+A informação acerca da ordenação das colunas deve ser armazenada nos campos `filters: { filterByName: { name }, filterByNumericValues = [], order: { column: 'Name', sort: 'ASC'} }`, o campo column representa o nome da coluna a ordenar e a ordem representa a ordenação, sendo 'ASC' ascendente e 'DESC' descendente. Por padrão, a tabela começa ordenada pela coluna 'Name' em ordem ascendente. Por exemplo:
 
 ```javascript
 {
-  filters: [
-    {
+  filters: {
+    filterByName: {
+      name: ''
+    },
+    filterByNumericValues : [],
+    order: {
       column: 'Name',
-      order: 'ASC',
+      sort: 'ASC',
     }
-  ]
+  }
 }
 ```
 
-Cada requisito mostra em seu exemplo somente os campos do estado relacionados àquele requisito. O resultado final acumulará campos dos vários exemplos.
+Essa ordenação deve ser feita via filtro: um dropdown selecionará a coluna a basear a ordenação e um par de radio buttons determinará se esta é ascendente ou descendente.
+
+O dropdown deve ser um elemento `select` com a propriedade `data-testid='column-sort'`, com as opções das colunas escolhíveis em seu interior. Deve haver também, dois `inputs` de tipo `radio`, com propriedades `data-testid='column-sort-input-asc'` e `data-testid='column-sort-input-desc'`, para definir o sentido da ordenação (com `value` sendo `ASC` ou `DESC`) e um botão para submeter a ordenação, com uma tag `button` e a propriedade `data-testid='column-sort-button'`.
+
+Adicione o atributo `data-testid` com o valor `planet-name` em todos os elementos da tabela que possuem o nome de um planeta.
 
 ---
 
