@@ -16,6 +16,8 @@
     ],
     "react/prefer-stateless-function": 0,
     "arrow-parens": [2, "always"],
+    "class-methods-use-this": ["off"],
+    "no-param-reassign": ["off"],
     "jsx-a11y/label-has-associated-control": 0
   },
   "env": {
