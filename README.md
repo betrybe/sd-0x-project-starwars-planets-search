@@ -94,13 +94,21 @@ Atente para a barra (`/`) ao final dos nomes dos diretórios. Adapte os comandos
 
 ## Requisitos do projeto
 
-### 1 - Fazer uma requisição para o endpoint `/planets` da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna `residents`
+### 1 - Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents`
 
 A tabela deve ser renderizada por um componente chamado `<Table />`. Os dados recebidos da API devem ser salvos num campo chamado `data` do contexto e é daí que a tabela deve lê-los. A requisição deve ser feita num componente separado do componente da tabela.
 
 A tabela deve ter uma primeira linha com os headers e as demais com as informações de cada campo.
 
-### 2 - Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado
+O que será verificado:
+```
+- Realiza uma requisição para a API
+- Preenche a tabela com os dados retornados
+- A tabela deve ter 13 colunas
+- A tabela deve ter 11 linhas
+```
+
+### 2 - Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado
 
 Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida que o nome é digitado, sem ter que apertar um botão para efetuar a filtragem. Por exemplo, se digitar "Tatoo", o planeta "Tatooine" deve ser exibido. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação e o texto digitado deve ser salvo num campo `filters: { filterByName: { name } }`. Por exemplo:
 
@@ -116,7 +124,15 @@ Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida 
 
 O campo de texto deve possuir a propriedade `data-testid='name-filter'` para que a avaliação automatizada funcione.
 
-### 3 - Sua página deve ter um filtro para valores numéricos
+O que será verificado:
+```
+- Renderiza campo de texto para filtro de nomes
+- Filtra planetas que possuem a letra "o" no nome
+- Filtra planetas que possuem a letra "oo" no nome
+- Realiza vários filtros em sequência
+```
+
+### Crie um filtro para valores numéricos
 
 Ele funcionará com três seletores:
 
@@ -150,7 +166,18 @@ Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da 
 }
 ```
 
-### 4 - Sua página não deve utilizar filtros repetidos
+O que será verificado:
+```
+- Renderiza o filtro de coluna
+- Renderiza o filtro de comparação
+- Renderiza o campo para o valor do filtro
+- Renderiza o botão para executar a filtragem
+- Filtra utilizando a comparação "menor que"
+- Filtra utilizando a comparação "maior que"
+- Filtra utilizando a comparação "igual a"
+```
+
+### 4 - Não utilize filtros repetidos
 
 Caso um filtro seja totalmente preenchido, um novo filtro de valores numéricos deve ser carregado. Este novo filtro não deve incluir quaisquer colunas que já tenham sido selecionadas em filtros de valores numéricos anteriores. Caso todas as colunas já tenham sido inclusas em filtros anteriores, não deve ser carregado um novo filtro. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação.
 
@@ -178,13 +205,24 @@ Por exemplo: O primeiro filtro tem as seguintes seleções: `population | maior 
 }
 ```
 
-### 5 - Cada filtro de valores numéricos deve ter um ícone de `X` que, ao ser clicado, o apaga e desfaz suas filtragens dos dados da tabela
+O que será verificado:
+```
+- Filtra por população e o remove das opções
+```
+
+### Apague e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` que deve existir em cada filtro de valores numéricos
 
 A coluna que este filtro selecionava deve passar a ficar disponível nos dropdowns dos demais filtros já presentes na tela. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação. Cada filtro deve possuir a propriedade `data-testid='filter'`, com um `button` em seu interior com o texto `X`.
 
+O que será verificado:
+```
+- Adiciona e remove um filtro
+- Adiciona e remove dois filtros
+```
+
 ## BÔNUS
 
-### 6 - As colunas da tabela devem ser ordenáveis de forma ascendente ou descendente
+### 6 - Ordene as colunas de forma ascendente ou descendente
 
 A informação acerca da ordenação das colunas deve ser armazenada nos campos `filters: { filterByName: { name }, filterByNumericValues = [], order: { column: 'Name', sort: 'ASC'} }`, o campo column representa o nome da coluna a ordenar e a ordem representa a ordenação, sendo 'ASC' ascendente e 'DESC' descendente. Por padrão, a tabela começa ordenada pela coluna 'Name' em ordem ascendente. Por exemplo:
 
@@ -208,6 +246,12 @@ Essa ordenação deve ser feita via filtro: um dropdown selecionará a coluna a 
 O dropdown deve ser um elemento `select` com a propriedade `data-testid='column-sort'`, com as opções das colunas escolhíveis em seu interior. Deve haver também, dois `inputs` de tipo `radio`, com propriedades `data-testid='column-sort-input-asc'` e `data-testid='column-sort-input-desc'`, para definir o sentido da ordenação (com `value` sendo `ASC` ou `DESC`) e um botão para submeter a ordenação, com uma tag `button` e a propriedade `data-testid='column-sort-button'`.
 
 Adicione o atributo `data-testid` com o valor `planet-name` em todos os elementos da tabela que possuem o nome de um planeta.
+
+O que será verificado:
+```
+- Verifica ordenação inicial
+- Ordena os planetas do mais populoso para o menos populoso
+```
 
 ---
 
@@ -246,6 +290,16 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
   * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+#### ENTREGA
+
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
+
+Link: [Avaliação](https://be-trybe.typeform.com/to/ZTeR4IbH)
+
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no _README_. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---
 
