@@ -19,7 +19,7 @@ jobs:
         if: steps.wait-for-build.outputs.conclusion == 'success'
       - name: Evaluator step
         id: test
-        uses: betrybe/react-scripts-evaluator-action@v3
+        uses: betrybe/react-scripts-evaluator-action@v4
         if: steps.wait-for-build.outputs.conclusion == 'success'
         with:
           repository-test-name: 'betrybe/sd-0x-project-starwars-datatable-hooks-tests'
