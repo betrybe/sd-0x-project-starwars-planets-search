@@ -210,14 +210,16 @@ O que será verificado:
 - Filtra por população e o remove das opções
 ```
 
-### Apague e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` que deve existir em cada filtro de valores numéricos
+### Apague e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X`
+
+O `button` com o ícone de `x` deve existir em cada filtro de valores numéricos.
 
 A coluna que este filtro selecionava deve passar a ficar disponível nos dropdowns dos demais filtros já presentes na tela. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação. Cada filtro deve possuir a propriedade `data-testid='filter'`, com um `button` em seu interior com o texto `X`.
 
 O que será verificado:
 ```
-- Adiciona e remove um filtro
-- Adiciona e remove dois filtros
+- Adiciona um filtro e verifica se a tabela foi atualizada com as informações filtradas, depois remove o filtro e verifica se os valores da tabela voltaram ao original.
+- Adiciona dois filtros e verifica se a tabela foi atualizada com as informações filtradas, depois remove os filtros e verifica se os valores da tabela voltaram ao original.
 ```
 
 ## BÔNUS
