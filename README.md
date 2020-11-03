@@ -105,7 +105,7 @@ O que será verificado:
 - Realiza uma requisição para a API
 - Preenche a tabela com os dados retornados
 - A tabela deve ter 13 colunas
-- A tabela deve ter 11 linhas
+- A tabela deve ter uma linha para cada planeta retornado
 ```
 
 ### 2 - Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado
@@ -132,7 +132,7 @@ O que será verificado:
 - Realiza vários filtros em sequência
 ```
 
-### Crie um filtro para valores numéricos
+### 3 - Crie um filtro para valores numéricos
 
 Ele funcionará com três seletores:
 
