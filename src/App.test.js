@@ -67,7 +67,7 @@ describe('Faça uma requisição para o endpoint `/planets` da API de Star Wars 
     };
   });
 
-  it('renderiza uma tabela com 13 colunas', async () => {
+  it('a tabela deve ter 13 colunas', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -75,7 +75,7 @@ describe('Faça uma requisição para o endpoint `/planets` da API de Star Wars 
     expect(await screen.findAllByRole(COLUMN_ROLE_SELECTOR)).toHaveLength(13);
   });
 
-  it('renderiza uma tabela com 11 linhas', async () => {
+  it('a tabela deve ter uma linha para cada planeta retornado', async () => {
     await act(async () => {
       render(<App />);
     });
