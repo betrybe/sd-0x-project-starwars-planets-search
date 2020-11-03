@@ -19,7 +19,7 @@ Nesse projeto, você será capaz de:
 
 ## Sumário
 
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto:)
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
 - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
 - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
 - [Como desenvolver](#como-desenvolver)
