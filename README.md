@@ -132,7 +132,7 @@ O que será verificado:
 - Realiza vários filtros em sequência
 ```
 
-### Crie um filtro para valores numéricos
+### 3 - Crie um filtro para valores numéricos
 
 Ele funcionará com três seletores:
 
