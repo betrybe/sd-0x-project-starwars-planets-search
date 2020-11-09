@@ -1,0 +1,18 @@
+{
+  "requirements": [{
+    "description": "Crie um componente chamado `Header`",
+    "bonus": false
+  }, {
+    "description": "Crie um componente chamado `MovieList`",
+    "bonus": false
+  }, {
+    "description": "Crie um componente chamado `MovieCard`",
+    "bonus": false
+  }, {
+    "description": "Crie um componente chamado `Rating`",
+    "bonus": false
+  }, {
+    "description": "Implemente o componente App",
+    "bonus": true
+  }]
+}

@@ -21,6 +21,25 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Linter](#linter)
 - [Lista de requisitos](#lista-de-requisitos)
+
+  - [1. Crie um componente chamado Header](#1-crie-um-componente-chamado-header)
+  - [2. Renderize o texto Movie Cards Library dentro de Header](#2-renderize-o-texto-movie-cards-library-dentro-de-header)
+  - [3. Crie um componente chamado MovieList](#3-crie-um-componente-chamado-movielist)
+  - [4. Renderize componentes MovieCard dentro de MovieList](#4-renderize-componentes-moviecard-dentro-de-movielist)
+  - [5. Passe uma key para cada MovieCard renderizado](#5-passe-uma-key-para-cada-moviecard-renderizado)
+  - [6. Crie um componente chamado MovieCard](#6-crie-um-componente-chamado-moviecard)
+  - [7. Renderize a imagem do filme](#7-renderize-a-imagem-do-filme)
+  - [8. Renderize o título do filme](#8-renderize-o-título-do-filme)
+  - [9. Renderize o subtítulo do filme](#9-renderize-o-subtítulo-do-filme)
+  - [10. Renderize a sinopse do filme](#10-renderize-a-sinopse-do-filme)
+  - [11. Renderize um componente Rating dentro de MovieCard](#11-renderize-um-componente-rating-dentro-de-moviecard)
+  - [12. Passe como prop para o componente Rating o atributo rating](#12-passe-como-prop-para-o-componente-rating-o-atributo-rating)
+  - [13. Crie um componente chamado Rating](#13-crie-um-componente-chamado-rating)
+  - [14. Renderize a nota de um filme dentro de Rating](#14-renderize-a-nota-de-um-filme-dentro-de-rating)
+  - [15. App deve renderizar Header](#15-app-deve-renderizar-header)
+  - [16. App deve renderizar MovieList](#16-app-deve-renderizar-movielist)
+  - [17. Adicione proptypes a todos os componentes](#17-adicione-proptypes-a-todos-os-componentes)
+
 - [Durante o desenvolvimento](#durante-o-desenvolvimento)
 - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
 - [Revisando um Pull Request](#revisando-um-pull-request)
@@ -95,9 +114,6 @@ Você deverá desenvolver uma biblioteca de filmes utilizando React. A bibliotec
 
 Você precisará implementar um conjunto de componentes em React que irão compor o seu App.
 
-
-
-
 ## Desenvolvimento e testes
 
 Este repositório já contem um _template_ com um App React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você não precisará realizar nenhuma configuração adicional. Você deverá completar este _template_ implementando os requisitos listados na próxima seção.
@@ -161,7 +177,7 @@ Quando seu projeto estiver terminado, todos os testes deverão estar passando:
 Especialmente no início, quando a maioria dos testes está falhando, a saída após executar os testes é bastante poluída. Você pode desabilitar temporariamente um teste utilizando a função `skip` junto à função `it`. Como o nome indica, esta função "pula" um teste:
 
 ```js
-it.skip('Renderize componentes `MovieCard` dentro de `MovieList`', () => {
+it.skip('Renderize o componente `MovieCard` dentro de `MovieList`', () => {
   wrapper = shallow(<Header />);
 
   expect(wrapper.find('header h1').text()).toBe('Movie Cards Library');
@@ -180,11 +196,11 @@ Uma estratégia é pular todos os testes no início e ir implementando um teste 
 
 Ao executar os testes localmente, [Jest](https://jestjs.io/), a ferramenta que executa os testes, entra em _watch mode_. Nesse modo, a cada vez que um arquivo é salvo, os testes são executados novamente. Isso pode aumentar sua produtividade removendo a necessidade de executar os testes manualmente o tempo todo. Você pode abrir uma aba no seu terminal ou no terminal do _VSCode_ e deixar o _Jest_ rodando nesse modo.
 
-## Data de entrega
+## DATA DE ENTREGA
 
 O projeto deverá ser entregue até a seguinte data para a avaliação final: ``DD/MM/YYYY - 00:00h``.
 
-## Requisitos do projeto
+## REQUISITOS DO PROJETO
 
 ### Linter
 
@@ -198,7 +214,7 @@ npm run lint
 
 ---
 
-## Lista de requisitos
+## LISTA DE REQUISITOS
 
 ### 1. Crie um componente chamado `Header`
 
@@ -270,7 +286,7 @@ Todos os compontens que recebem props devem ter suas proptypes corretamente decl
 
 ---
 
-## Durante o desenvolvimento
+## DURANTE O DESENVOLVIMENTO
 
 * Faça `commits` das alterações que você fizer no código regularmente;
 
@@ -290,7 +306,7 @@ Todos os compontens que recebem props devem ter suas proptypes corretamente decl
 
 ---
 
-## Depois de terminar o desenvolvimento (opcional)
+## DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
 Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
@@ -300,19 +316,19 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
 ---
 
-## Revisando um Pull Request
+## REVISANDO UM PULL REQUEST
 
 Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
 #VQV 🚀
 
-## Avisos Finais
+## AVISOS FINAIS
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
