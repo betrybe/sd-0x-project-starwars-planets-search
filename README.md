@@ -1,6 +1,6 @@
 Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
 
-# Boas vindas ao repositório do projeto StarWars Datatable Filters em Context API e Hooks!
+# BOAS VINDAS AO REPOSITÓRIO DO PROJETO STARWARS DATATABLE FILTERS EM CONTEXT API E HOOKS!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo e, se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
 
@@ -8,16 +8,19 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-## Habilidades
+## HABILIDADES
 
 Nesse projeto, você será capaz de:
-  - Utilizar a Context API do React para gerenciar estados globais.
-  - Utilizar o useState pare gerenciar os estados locais em componentes funcionais
-  - Utilizar o useEffect para gerenciar os ciclos de vida dos componentes funcionais
+
+* Utilizar a _Context API_ do **React** para gerenciar estado.
+* Utilizar o _React Hook useState_;
+* Utilizar o _React Hook useContext_;
+* Utilizar o _React Hook useEffect_
+* Criar _React Hooks_ customizados
 
 ---
 
-## Sumário
+## SUMÁRIO
 
 - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto:)
 - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
@@ -28,6 +31,14 @@ Nesse projeto, você será capaz de:
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Linter](#linter)
 - [Lista de requisitos](#lista-de-requisitos)
+  - [1. Faça uma requisição para o endpoint /planets da API de Star Wars](#1-faça-uma-requisição-para-o-endpoint-planets-da-api-de-star-wars-e-preencha-uma-tabela-com-os-dados-retornados-com-exceção-dos-da-coluna-residents)
+  - [2. Filtre a tabela através de um texto](#2-filtre-a-tabela-através-de-um-texto-inserido-num-campo-de-texto-exibindo-somente-os-planetas-cujos-nomes-incluam-o-texto-digitado)
+  - [3. Crie um filtro para valores numéricos](#3-crie-um-filtro-para-valores-numéricos)
+  - [4. Não utilize filtros repetidos](#4-não-utilize-filtros-repetidos)
+  - [5. Apague o filtro de valores numéricos](#5-apague-o-filtro-de-valores-numéricos-e-desfaça-as-filtragens-dos-dados-da-tabela-ao-clicar-no-ícone-de-x-de-um-dos-filtro)
+  - [6. Ordene as colunas](#6-ordene-as-colunas-de-forma-ascendente-ou-descendente)
+
+
 - [Durante o desenvolvimento](#durante-o-desenvolvimento)
 - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
 - [Revisando um Pull Request](#revisando-um-pull-request)
@@ -35,7 +46,7 @@ Nesse projeto, você será capaz de:
 
 ---
 
-## Instruções para entregar seu projeto:
+## INSTRUÇÕES PARA ENTREGAR SEU PROJETO:
 
 ### Antes de começar a desenvolver:
 
@@ -100,13 +111,13 @@ export default StarWarsContext;
 
 ---
 
-## O que deverá ser desenvolvido
+## O QUE DEVERÁ SER DESENVOLVIDO
 
 Você vai desenvolver uma lista com filtros de planetas do universo de StarWars usando **Context API e Hooks** para controlar os estados globais.
 
 ---
 
-## Como desenvolver
+## COMO DESENVOLVER
 
 Este repositório já contém um _template_ de uma aplicação React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você **poderá** copiar os arquivos que criou ou modificou no projeto anterior para este repositório. Veja [aqui](#copiando-os-arquivos-entre-projetos) instruções de como fazer isso de uma forma fácil.
 
@@ -114,13 +125,13 @@ Caso não tenha realizado o projeto anterior, você deverá implementar todos os
 
 ---
 
-## Data de entrega
+## DATA DE ENTREGA
 
 O projeto deverá ser entregue até a seguinte data para a avaliação final: ``DD/MM/YYYY - 00:00h``.
 
 ---
 
-## Requisitos do projeto
+## REQUISITOS DO PROJETO
 
 ### Linter
 
@@ -134,7 +145,7 @@ npm run lint
 
 ---
 
-## Lista de requisitos
+## LISTA DE REQUISITOS
 
 ### 1. Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents`
 
@@ -299,9 +310,7 @@ O que será verificado:
 
 ---
 
-## Durante o desenvolvimento
-
-⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo CodeClimate estão resolvidas! ⚠
+## DURANTE O DESENVOLVIMENTO
 
 * Faça `commits` das alterações que você fizer no código regularmente;
 
@@ -321,7 +330,7 @@ O que será verificado:
 
 ---
 
-## Depois de terminar o desenvolvimento (opcional)
+## DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
 Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
@@ -337,7 +346,7 @@ Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362
 
 ---
 
-## Entrega
+## ENTREGA
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
@@ -347,16 +356,8 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
 
 ---
 
-## Revisando um Pull Request
+## REVISANDO UM PULL REQUEST
 
 Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
 #VQV 🚀
-
-## Avisos Finais
-
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
-
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
-
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no **README**. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
