@@ -1,44 +1,43 @@
 Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
 
-# Boas vindas ao repositório do projeto de Movie Cards Library!
+# BOAS VINDAS AO REPOSITÓRIO DO PROJETO STARWARS DATATABLE FILTERS EM CONTEXT API E HOOKS!
 
-Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
+Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo e, se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
 
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir desse repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
-
-## Neste projeto, verificamos se você é capaz de:
-
-* Criar aplicações completas de front-end utilizando a biblioteca React.
+Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
 ---
 
-## Sumário
+## HABILIDADES
 
+Nesse projeto, você será capaz de:
+
+* Utilizar a _Context API_ do **React** para gerenciar estado.
+* Utilizar o _React Hook useState_;
+* Utilizar o _React Hook useContext_;
+* Utilizar o _React Hook useEffect_
+* Criar _React Hooks_ customizados
+
+---
+
+## SUMÁRIO
+
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
 - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
 - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-- [Desenvolvimento e testes](#desenvolvimento-e-testes)
+- [Como desenvolver](#como-desenvolver)
+  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
 - [Data de entrega](#data-de-entrega)
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Linter](#linter)
 - [Lista de requisitos](#lista-de-requisitos)
+  - [1. Faça uma requisição para o endpoint /planets da API de Star Wars](#1-faça-uma-requisição-para-o-endpoint-planets-da-api-de-star-wars-e-preencha-uma-tabela-com-os-dados-retornados-com-exceção-dos-da-coluna-residents)
+  - [2. Filtre a tabela através de um texto](#2-filtre-a-tabela-através-de-um-texto-inserido-num-campo-de-texto-exibindo-somente-os-planetas-cujos-nomes-incluam-o-texto-digitado)
+  - [3. Crie um filtro para valores numéricos](#3-crie-um-filtro-para-valores-numéricos)
+  - [4. Não utilize filtros repetidos](#4-não-utilize-filtros-repetidos)
+  - [5. Apague o filtro de valores numéricos](#5-apague-o-filtro-de-valores-numéricos-e-desfaça-as-filtragens-dos-dados-da-tabela-ao-clicar-no-ícone-de-x-de-um-dos-filtro)
+  - [6. Ordene as colunas](#6-ordene-as-colunas-de-forma-ascendente-ou-descendente)
 
-  - [1. Crie um componente chamado Header](#1-crie-um-componente-chamado-header)
-  - [2. Renderize o texto Movie Cards Library dentro de Header](#2-renderize-o-texto-movie-cards-library-dentro-de-header)
-  - [3. Crie um componente chamado MovieList](#3-crie-um-componente-chamado-movielist)
-  - [4. Renderize componentes MovieCard dentro de MovieList](#4-renderize-componentes-moviecard-dentro-de-movielist)
-  - [5. Passe uma key para cada MovieCard renderizado](#5-passe-uma-key-para-cada-moviecard-renderizado)
-  - [6. Crie um componente chamado MovieCard](#6-crie-um-componente-chamado-moviecard)
-  - [7. Renderize a imagem do filme](#7-renderize-a-imagem-do-filme)
-  - [8. Renderize o título do filme](#8-renderize-o-título-do-filme)
-  - [9. Renderize o subtítulo do filme](#9-renderize-o-subtítulo-do-filme)
-  - [10. Renderize a sinopse do filme](#10-renderize-a-sinopse-do-filme)
-  - [11. Renderize um componente Rating dentro de MovieCard](#11-renderize-um-componente-rating-dentro-de-moviecard)
-  - [12. Passe como prop para o componente Rating o atributo rating](#12-passe-como-prop-para-o-componente-rating-o-atributo-rating)
-  - [13. Crie um componente chamado Rating](#13-crie-um-componente-chamado-rating)
-  - [14. Renderize a nota de um filme dentro de Rating](#14-renderize-a-nota-de-um-filme-dentro-de-rating)
-  - [15. App deve renderizar Header](#15-app-deve-renderizar-header)
-  - [16. App deve renderizar MovieList](#16-app-deve-renderizar-movielist)
-  - [17. Adicione proptypes a todos os componentes](#17-adicione-proptypes-a-todos-os-componentes)
 
 - [Durante o desenvolvimento](#durante-o-desenvolvimento)
 - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
@@ -47,158 +46,90 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-## Antes de começar a desenvolver
+## INSTRUÇÕES PARA ENTREGAR SEU PROJETO:
+
+### Antes de começar a desenvolver:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-block12-project-movie-cards-library.git`.
+  * `git clone git@github.com:tryber/sd-0x-project-starwars-datatable-hooks.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-block12-project-movie-cards-library`
+    * `sd-0x-project-starwars-datatable-hooks`
 
-2. Instale as dependências, inicialize o projeto e rode os testes
-  * Instale as dependências:
-    * `npm install`
-  * Inicialize o projeto:
-    * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
-  * Verifique que os testes estão executando:
-    * `npm test` (os testes devem rodar e falhar)
+2. Instale as dependências
+  * `npm install`
 
 3. Crie uma branch a partir da branch `master`
   * Verifique que você está na branch `master`
     * Exemplo: `git branch`
   * Se não estiver, mude para a branch `master`
     * Exemplo: `git checkout master`
-  * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
+  * Agora crie uma branch para a qual você vai submeter os `commits` do seu projeto
     * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-movie-cards-library`
+    * Exemplo: `git checkout -b joaozinho-react-context-hooks-starwars-datatable-filters`
 
-4. Crie a pasta `components` dentro da pasta `src` e um arquivo `Header.jsx` dentro dessa pasta:
-  * Verifique que você está na raiz do projeto
-    * Exemplo: `pwd` -> o retorno vai ser algo tipo _/Users/joaozinho/code/**sd-0x-block12-project-movie-cards-library**_
-  * Crie a pasta `components` e o arquivo `Header.jsx`
-    * Exemplo:
-      * `mkdir src/components`
-      * `touch src/components/Header.jsx`
-      * `echo "// Iniciando o projeto 🚀" > src/components/Header.jsx`
+
+4. Crie um contexto. Por exemplo, se você quer nomear seu contexto `StarWarsContext`, e colocá-lo no diretório `context` dentro de `src`, faça:
+
+```sh
+mkdir src/context
+touch src/context/StarWarsContext.js
+```
+
+E em `src/context/StarWarsContext`:
+
+```jsx
+import { createContext } from 'react';
+
+const StarWarsContext = createContext();
+
+export default StarWarsContext;
+```
 
 5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
   * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (deve aparecer listada a pasta _components_ em vermelho)
-  * Adicione o novo arquivo ao _stage_ do Git
+    * Exemplo: `git status` (deve aparecer listado o arquivo `src/context/StarWarsContext.js` em vermelho)
+  * Adicione o arquivo alterado ao _stage_ do Git
       * Exemplo:
         * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (deve aparecer listado o arquivo _components/Header.jsx_ em verde)
+        * `git status` (deve aparecer listado o arquivo `src/context/StarWarsContext.js` em verde)
   * Faça o `commit` inicial
       * Exemplo:
         * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
         * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
 6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-movie-cards-library`
+  * Usando o exemplo anterior: `git push -u origin joaozinho-react-context-hooks-starwars-datatable-filters`
 
 7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-block12-project-movie-cards-library/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-starwars-datatable-hooks/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-block12-project-movie-cards-library/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-starwars-datatable-hooks/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
-## O que deverá ser desenvolvido
+## O QUE DEVERÁ SER DESENVOLVIDO
 
-Você deverá desenvolver uma biblioteca de filmes utilizando React. A biblioteca deverá possuir um cabeçalho e uma lista de cartões. Cada cartão representa um filme e possui uma imagem, título, subtítulo, sinopse e avaliação. A biblioteca deverá ser algo parecido com a imagem abaixo.
+Você vai desenvolver uma lista com filtros de planetas do universo de StarWars usando **Context API e Hooks** para controlar os estados globais.
 
-![image](preview.png)
+---
 
-Você precisará implementar um conjunto de componentes em React que irão compor o seu App.
+## COMO DESENVOLVER
 
-## Desenvolvimento e testes
+Este repositório já contém um _template_ de uma aplicação React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você **poderá** copiar os arquivos que criou ou modificou no projeto anterior para este repositório. Veja [aqui](#copiando-os-arquivos-entre-projetos) instruções de como fazer isso de uma forma fácil.
 
-Este repositório já contem um _template_ com um App React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você não precisará realizar nenhuma configuração adicional. Você deverá completar este _template_ implementando os requisitos listados na próxima seção.
+Caso não tenha realizado o projeto anterior, você deverá implementar todos os requisitos obrigatórios do projeto anterior e os novos requisitos do projeto atual. Contudo, não é necessário primeiro desenvolver o projeto com Redux para então substituí-lo por **Context API e Hooks**.
 
-Será necessário criar quatro `React Components`:
-
-  - Header
-  - MovieList
-  - MovieCard
-  - Rating
-
-Cada componente representa uma parte específica do site, conforme ilustrado abaixo:
-
-![image](site-outline.png)
-
-Todos os componentes devem ser criados dentro da pasta `src/components`. **É importante que seus componentes tenham exatamente os nomes listados acima**.
-
-Todos os requisitos do projeto serão testados automaticamente. Os testes para cada requisitos estão no arquivo `src/App.test.js`. Gaste um tempo lendo-o para entender como os testes estão organizados.
-
-Para executar os testes localmente, digite no terminal o comando `npm test`. Inicialmente, seus testes estarão assim:
-
-![image](failing-tests.png)
-
-A primeira parte da saída mostra um sumário de cada teste e seu status. Um ❌ representa um teste falhando, enquanto um ✅ representa um teste correto. Naturalmente, no início todos os testes estarão falhando.
-
-Abaixo do sumário, para cada teste falhando, há uma mensagem explicativa sobre o motivo que causou a falha do teste, assim como a linha em que a falha ocorreu. Na imagem, vemos que o teste falha porque o componente `Header`, utilizado na linha 38, não está definido.
-
-Se fizermos uma implementação simples do componente `Header`, que não renderiza nada:
-
-```jsx
-import React from 'react';
-
-class Header extends React.Component {
-  render() {
-  }
-}
-
-export default Header;
-```
-
-E descomentarmos a linha que importa o componente `Header` em `App.test.js`:
-
-```js
-// import App from './App';
-import Header from './components/Header';
-// import MovieCard from './components/MovieCard';
-// import MovieList from './components/MovieList';
-// import Rating from './components/Rating';
-```
-
-Veremos que o primeiro teste agora passa:
-
-![image](first-green-test.png)
-
-Quando seu projeto estiver terminado, todos os testes deverão estar passando:
-
-![image](all-green.png)
-
-#### Dica: desativanto testes
-
-Especialmente no início, quando a maioria dos testes está falhando, a saída após executar os testes é bastante poluída. Você pode desabilitar temporariamente um teste utilizando a função `skip` junto à função `it`. Como o nome indica, esta função "pula" um teste:
-
-```js
-it.skip('Renderize o componente `MovieCard` dentro de `MovieList`', () => {
-  wrapper = shallow(<Header />);
-
-  expect(wrapper.find('header h1').text()).toBe('Movie Cards Library');
-});
-```
-
-Na saída da execução dos testes, você verá um <img src="orange-circle.png" width="15px"> indicando que o teste está sendo pulado:
-
-![image](skipped-test.png)
-
-Uma estratégia é pular todos os testes no início e ir implementando um teste de cada vez, removendo dele a função `skip`.
-
-⚠️ Lembre-se de não entregar o projeto com nenhum teste ignorado. Testes ignoradados serão tratados como testes falhando.
-
-#### Dica: watch mode
-
-Ao executar os testes localmente, [Jest](https://jestjs.io/), a ferramenta que executa os testes, entra em _watch mode_. Nesse modo, a cada vez que um arquivo é salvo, os testes são executados novamente. Isso pode aumentar sua produtividade removendo a necessidade de executar os testes manualmente o tempo todo. Você pode abrir uma aba no seu terminal ou no terminal do _VSCode_ e deixar o _Jest_ rodando nesse modo.
+---
 
 ## DATA DE ENTREGA
 
 O projeto deverá ser entregue até a seguinte data para a avaliação final: ``DD/MM/YYYY - 00:00h``.
+
+---
 
 ## REQUISITOS DO PROJETO
 
@@ -216,73 +147,166 @@ npm run lint
 
 ## LISTA DE REQUISITOS
 
-### 1. Crie um componente chamado `Header`
+### 1. Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents`
 
-Esse componente representará o cabeçalho da página.
+A tabela deve ser renderizada por um componente chamado `<Table />`. Os dados recebidos da API devem ser salvos num campo chamado `data` do contexto e é daí que a tabela deve lê-los. A requisição deve ser feita num componente separado do componente da tabela.
 
-### 2. Renderize o texto "Movie Cards Library" dentro de `Header`
+A tabela deve ter uma primeira linha com os headers e as demais com as informações de cada campo.
 
-O texto deverá estar dentro de uma tag `h1`, que por sua vez deve estar dentro de uma tag `header`.
+O que será verificado:
+```
+- Realiza uma requisição para a API
+- Preenche a tabela com os dados retornados
+- A tabela deve ter 13 colunas
+- A tabela deve ter uma linha para cada planeta retornado
+```
 
-### 3. Crie um componente chamado `MovieList`
+### 2. Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado
 
-Este componente representará toda a área com os cartões de filmes. `MovieList` deve receber uma prop `movies`, que é um array de objetos com informações de um filme.
+Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida que o nome é digitado, sem ter que apertar um botão para efetuar a filtragem. Por exemplo, se digitar "Tatoo", o planeta "Tatooine" deve ser exibido. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação e o texto digitado deve ser salvo num campo `filters: { filterByName: { name } }`. Por exemplo:
 
-### 4. Renderize componentes `MovieCard` dentro de `MovieList`
+```javascript
+{
+  filters: {
+    filterByName: {
+      name: 'Tatoo'
+    }
+  }
+}
+```
 
-`MovieList` deve renderizar um componente `MovieCard` para cada objeto contido no array recebido na prop `movies`.
+O campo de texto deve possuir a propriedade `data-testid='name-filter'` para que a avaliação automatizada funcione.
 
-### 5. Passe uma key para cada `MovieCard` renderizado
+O que será verificado:
+```
+- Renderiza campo de texto para filtro de nomes
+- Filtra planetas que possuem a letra "o" no nome
+- Filtra planetas que possuem a letra "oo" no nome
+- Realiza vários filtros em sequência
+```
 
-`MovieList` deve renderizar `MovieCard`s de forma dinâmica. Ou seja, deve utilizar a função `map` para renderizar uma lista. Cada componente `MovieCard` deve receber uma prop `key` com o nome do filme.
+### 3. Crie um filtro para valores numéricos
 
-### 6. Crie um componente chamado `MovieCard`
+Ele funcionará com três seletores:
 
-Esse componente representa um cartão de filme. `MovieCard` deve receber uma prop `movie`. Essa prop será um objeto, contendo as propriedades, `title`, `subtitle`, `storyline`, `imagePath` e `rating`.
+  - O primeiro deve abrir um dropdown que permita a quem usa selecionar uma das seguintes colunas: `population`, `orbital_period`, `diameter`, `rotation_period` e `surface_water`. Deve ser uma tag `select` com a propriedade `data-testid='column-filter'`;
+  - O segundo deve determinar se a faixa de valor será `maior que`, `menor que` ou `igual a` o numero que virá a seguir. Uma tag `select` com a propriedade `data-testid='comparison-filter'`;
+  - O terceiro deve ser uma caixa de texto que só aceita números. Essa caixa deve ser uma tag `input` com a propriedade `data-testid='value-filter'`;
+  - Deve haver um botão para acionar o filtro, com a propriedade `data-testid='button-filter'`.
 
-### 7. Renderize a imagem do filme
+A combinação desses três seletores deve filtrar os dados da tabela de acordo com a coluna correspondente e com os valores escolhidos. Por exemplo:
+  - A seleção `population | maior que | 100000` - Seleciona somente planetas com mais de 100000 habitantes.
+  - A seleção `diameter | menor que | 8000` - Seleciona somente planetas com diâmetro menor que 8000.
 
-`MovieCard` deve renderizar uma tag `img`, tendo como atributo `src` o valor da propriedade `imagePath` do objeto recebido como prop.
+Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação. No contexto, esses valores devem ser salvos nos campos `filters { filterByName: { name }, filterByNumericValues: [{ column, comparison, value }] }`. Por exemplo:
 
-### 8. Renderize o título do filme
+```javascript
+{
+  filters:
+    {
+      filterByName: {
+        name: ''
+      },
+      filterByNumericValues: [
+        {
+          column: 'population',
+          comparison: 'maior que',
+          value: '100000',
+        }
+      ]
+    }
+  }
+}
+```
 
-`MovieCard` deve renderizar o título do filme dentro de uma tag `h4`. O título está contido na propriedade `title` do objeto recebido como prop.
+O que será verificado:
+```
+- Renderiza o filtro de coluna
+- Renderiza o filtro de comparação
+- Renderiza o campo para o valor do filtro
+- Renderiza o botão para executar a filtragem
+- Filtra utilizando a comparação "menor que"
+- Filtra utilizando a comparação "maior que"
+- Filtra utilizando a comparação "igual a"
+```
 
-### 9. Renderize o subtítulo do filme
+### 4. Não utilize filtros repetidos
 
-`MovieCard` deve renderizar o subtítulo do filme dentro de uma tag `h5`. O subtítulo está contido na propriedade `subtitle` do objeto recebido como prop.
+Caso um filtro seja totalmente preenchido, um novo filtro de valores numéricos deve ser carregado. Este novo filtro não deve incluir quaisquer colunas que já tenham sido selecionadas em filtros de valores numéricos anteriores. Caso todas as colunas já tenham sido inclusas em filtros anteriores, não deve ser carregado um novo filtro. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação.
 
-### 10. Renderize a sinopse do filme
+Por exemplo: O primeiro filtro tem as seguintes seleções: `population | maior que | 100000`. Um segundo filtro deve aparecer após essas seleções serem todas feitas e, no primeiro dropdown deste segundo filtro, a opção `population` deve estar ausente. Se no segundo filtro fosse selecionado `diameter | menor que | 8000`, o estado ficaria assim:
 
-`MovieCard` deve renderizar a sinopse do filme dentro de uma tag `p`. A sinopse está contida na propriedade `storyline` do objeto recebido como prop.
+```javascript
+{
+  filters: {
+    filterByName: {
+      name: ''
+    },
+    filterByNumericValues: [
+      {
+        column: 'population',
+        comparison: 'maior que',
+        value: '100000',
+      },
+      {
+        column: 'diameter',
+        comparison: 'menor que',
+        value: '8000',
+      }
+    ]
+  }
+}
+```
 
-### 11. Renderize um componente `Rating` dentro de `MovieCard`
+O que será verificado:
+```
+- Filtra por população e o remove das opções
+```
 
-`MovieCard` deve renderizar um componente `Rating`.
+### 5. Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` de um dos filtro
 
-### 12. Passe como prop para o componente `Rating` o atributo `rating`
+O `button` com o ícone de `x` deve existir em cada filtro de valores numéricos.
 
-`MovieCard` deve passar para o componente `Rating` uma prop chamada `rating`. O valor dessa prop é a propriedade `rating` do objeto recebido na prop `movie`.
+A coluna que este filtro selecionava deve passar a ficar disponível nos dropdowns dos demais filtros já presentes na tela. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação. Cada filtro deve possuir a propriedade `data-testid='filter'`, com um `button` em seu interior com o texto `X`.
 
-### 13. Crie um componente chamado `Rating`
+O que será verificado:
+```
+- Adiciona um filtro e verifica se a tabela foi atualizada com as informações filtradas, depois remove o filtro e verifica se os valores da tabela voltaram ao original.
+- Adiciona dois filtros e verifica se a tabela foi atualizada com as informações filtradas, depois remove os filtros e verifica se os valores da tabela voltaram ao original.
+```
 
-Esse componente representa a avaliação de um filme.
+### BÔNUS
 
-### 14. Renderize a nota de um filme dentro de `Rating`
+### 6 - Ordene as colunas de forma ascendente ou descendente
 
-`Rating` deve renderizar a nota do filme recebido na prop `rating` dentro de um elemento com a classe `rating`.
+A informação acerca da ordenação das colunas deve ser armazenada nos campos `filters: { filterByName: { name }, filterByNumericValues = [], order: { column: 'Name', sort: 'ASC'} }`, o campo column representa o nome da coluna a ordenar e a ordem representa a ordenação, sendo 'ASC' ascendente e 'DESC' descendente. Por padrão, a tabela começa ordenada pela coluna 'Name' em ordem ascendente. Por exemplo:
 
-### 15. `App` deve renderizar `Header`
+```javascript
+{
+  filters: {
+    filterByName: {
+      name: ''
+    },
+    filterByNumericValues : [],
+    order: {
+      column: 'Name',
+      sort: 'ASC',
+    }
+  }
+}
+```
 
-O componente `App` deve renderizar um componente `Header`.
+Essa ordenação deve ser feita via filtro: um dropdown selecionará a coluna a basear a ordenação e um par de radio buttons determinará se esta é ascendente ou descendente.
 
-### 16. `App` deve renderizar `MovieList`
+O dropdown deve ser um elemento `select` com a propriedade `data-testid='column-sort'`, com as opções das colunas escolhíveis em seu interior. Deve haver também, dois `inputs` de tipo `radio`, com propriedades `data-testid='column-sort-input-asc'` e `data-testid='column-sort-input-desc'`, para definir o sentido da ordenação (com `value` sendo `ASC` ou `DESC`) e um botão para submeter a ordenação, com uma tag `button` e a propriedade `data-testid='column-sort-button'`.
 
-O componente `App` deve renderizar um componente `MovieList`, passando como prop `movies` a lista de filmes contida no arquivo `data.js`. Para isso, você precisará importar `data.js` dentro de `App.js`.
+Adicione o atributo `data-testid` com o valor `planet-name` em todos os elementos da tabela que possuem o nome de um planeta.
 
-### 17. - Adicione proptypes a todos os componentes
-
-Todos os compontens que recebem props devem ter suas proptypes corretamente declaradas. O eslint checa automaticamente declaração de proptypes, portanto seu Pull Request deverá passar nas regras do eslint para satisfazer esse requisito.
+O que será verificado:
+```
+- Verifica ordenação inicial
+- Ordena os planetas do mais populoso para o menos populoso
+```
 
 ---
 
@@ -316,9 +340,19 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+## ENTREGA
+
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
+
+Link: [Avaliação](https://be-trybe.typeform.com/to/ZTeR4IbH)
+
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no _README_. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---
 
@@ -327,11 +361,3 @@ Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362
 Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
 #VQV 🚀
-
-## AVISOS FINAIS
-
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
-
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
-
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no **README**. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
