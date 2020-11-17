@@ -28,18 +28,18 @@ const mockFetch = () => {
     }));
 }
 
-describe('Fazer uma requisição para o endpoint `/planets` da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna `residents`', () => {
+describe('Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents`', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
-  it('realiza uma requisição para a API', async () => {
+  it('Realiza uma requisição para a API', async () => {
     await act(async () => {
       render(<App />);
     });
     expect(global.fetch).toHaveBeenCalled();
   });
 
-  it('preenche a tabela com os dados retornados', async () => {
+  it('Preenche a tabela com os dados retornados', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -67,7 +67,7 @@ describe('Fazer uma requisição para o endpoint `/planets` da API de Star Wars 
     };
   });
 
-  it('renderiza uma tabela com 13 colunas', async () => {
+  it('A tabela deve ter 13 colunas', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -75,7 +75,7 @@ describe('Fazer uma requisição para o endpoint `/planets` da API de Star Wars 
     expect(await screen.findAllByRole(COLUMN_ROLE_SELECTOR)).toHaveLength(13);
   });
 
-  it('renderiza uma tabela com 11 linhas', async () => {
+  it('A tabela deve ter uma linha para cada planeta retornado', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -84,18 +84,18 @@ describe('Fazer uma requisição para o endpoint `/planets` da API de Star Wars 
   });
 });
 
-describe('Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado', () => {
+describe('Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
-  it('renderiza campo de texto para filtro de nomes', async () => {
+  it('Renderiza campo de texto para filtro de nomes', async () => {
     await act(async () => {
       render(<App />);
     });
     expect(await screen.findByTestId(INPUT_FILTER_NAME_SELECTOR)).toBeInTheDocument();
   });
 
-  it('filtra planetas que possuem a letra "o" no nome', async () => {
+  it('Filtra planetas que possuem a letra "o" no nome', async () => {
     await act(async () => {
       render(<App />);
       const input = await screen.findByTestId(INPUT_FILTER_NAME_SELECTOR);
@@ -109,7 +109,7 @@ describe('Sua página deve ter um campo de texto que filtra a tabela para soment
     }
   });
 
-  it('filtra planetas que possuem a letra "oo" no nome', async () => {
+  it('Filtra planetas que possuem a letra "oo" no nome', async () => {
     await act(async () => {
       render(<App />);
       const input = await screen.findByTestId(INPUT_FILTER_NAME_SELECTOR);
@@ -123,7 +123,7 @@ describe('Sua página deve ter um campo de texto que filtra a tabela para soment
     }
   });
 
-  it('realiza vários filtros em sequência', async () => {
+  it('Realiza vários filtros em sequência', async () => {
     await act(async () => {
       render(<App />);
       const input = await screen.findByTestId(INPUT_FILTER_NAME_SELECTOR);
@@ -158,11 +158,11 @@ describe('Sua página deve ter um campo de texto que filtra a tabela para soment
   });
 });
 
-describe('Sua página deve ter um filtro para valores numéricos', () => {
+describe('Crie um filtro para valores numéricos', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
-  it('renderiza o filtro de coluna', async () => {
+  it('Renderiza o filtro de coluna', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -177,7 +177,7 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
     expect(foundColumnFilter).toEqual(expect.arrayContaining(columns));
   });
 
-  it('renderiza o filtro de comparação', async () => {
+  it('Renderiza o filtro de comparação', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -192,7 +192,7 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
     expect(foundComparisonFilter).toEqual(expect.arrayContaining(columns));
   });
 
-  it('renderiza o campo para o valor do filtro', async () => {
+  it('Renderiza o campo para o valor do filtro', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -200,7 +200,7 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
     expect(await screen.findByTestId(VALUE_FILTER_SELECTOR)).toHaveProperty('nodeName', 'INPUT');
   });
 
-  it('renderiza o botão para executar a filtragem', async () => {
+  it('Renderiza o botão para executar a filtragem', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -208,7 +208,7 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
     expect(await screen.findByTestId(BUTTON_FILTER_SELECTOR)).toHaveProperty('nodeName', 'BUTTON');
   });
 
-  it('filtra utilizando a comparação "menor que"', async () => {
+  it('Filtra utilizando a comparação "menor que"', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -221,7 +221,7 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
     expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(7);
   });
 
-  it('filtra utilizando a comparação "maior que"', async () => {
+  it('Filtra utilizando a comparação "maior que"', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -234,7 +234,7 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
     expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(8);
   });
 
-  it('filtra utilizando a comparação "igual a"', async () => {
+  it('Filtra utilizando a comparação "igual a"', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -248,11 +248,11 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
   });
 });
 
-describe('Sua página não deve utilizar filtros repetidos', () => {
+describe('Não utilize filtros repetidos', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
-  it('filtra por população e o remove das opções', async () => {
+  it('Filtra por população e o remove das opções', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -284,7 +284,7 @@ describe('Sua página não deve utilizar filtros repetidos', () => {
   });
 });
 
-describe('Cada filtro de valores numéricos deve ter um ícone de `X` que, ao ser clicado, o apaga e desfaz suas filtragens dos dados da tabela', () => {
+describe('Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` de um dos filtro', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -293,7 +293,7 @@ describe('Cada filtro de valores numéricos deve ter um ícone de `X` que, ao se
     fireEvent.click(filters[0].querySelector('button'));
   };
 
-  it('adiciona e remove um filtro', async () => {
+  it('Adiciona um filtro e verifica se a tabela foi atualizada com as informações filtradas, depois remove o filtro e verifica se os valores da tabela voltaram ao original', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -310,7 +310,7 @@ describe('Cada filtro de valores numéricos deve ter um ícone de `X` que, ao se
     expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(11);
   });
 
-  it('adiciona e remove dois filtros', async () => {
+  it('Adiciona dois filtros e verifica se a tabela foi atualizada com as informações filtradas, depois remove os filtros e verifica se os valores da tabela voltaram ao original', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -336,11 +336,11 @@ describe('Cada filtro de valores numéricos deve ter um ícone de `X` que, ao se
   });
 });
 
-describe('As colunas da tabela devem ser ordenáveis de forma ascendente ou descendente', () => {
+describe('Ordene as colunas de forma ascendente ou descendente', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
-  it('verifica ordenação inicial', async () => {
+  it('Verifica ordenação inicial', async () => {
     await act(async () => {
       render(<App />);
     });

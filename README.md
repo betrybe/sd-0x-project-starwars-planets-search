@@ -1,4 +1,6 @@
-# Boas vindas ao repositório do projeto StarWars Datatable Filters em Context API e Hooks!
+Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
+
+# BOAS VINDAS AO REPOSITÓRIO DO PROJETO STARWARS DATATABLE FILTERS EM CONTEXT API E HOOKS!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo e, se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
 
@@ -6,9 +8,47 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-## Instruções para entregar seu projeto:
+## HABILIDADES
 
-### ANTES DE COMEÇAR A DESENVOLVER:
+Nesse projeto, você será capaz de:
+
+* Utilizar a _Context API_ do **React** para gerenciar estado.
+* Utilizar o _React Hook useState_;
+* Utilizar o _React Hook useContext_;
+* Utilizar o _React Hook useEffect_
+* Criar _React Hooks_ customizados
+
+---
+
+## SUMÁRIO
+
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+- [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
+- [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+- [Como desenvolver](#como-desenvolver)
+  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
+- [Data de entrega](#data-de-entrega)
+- [Requisitos do projeto](#requisitos-do-projeto)
+  - [Linter](#linter)
+- [Lista de requisitos](#lista-de-requisitos)
+  - [1. Faça uma requisição para o endpoint /planets da API de Star Wars](#1-faça-uma-requisição-para-o-endpoint-planets-da-api-de-star-wars-e-preencha-uma-tabela-com-os-dados-retornados-com-exceção-dos-da-coluna-residents)
+  - [2. Filtre a tabela através de um texto](#2-filtre-a-tabela-através-de-um-texto-inserido-num-campo-de-texto-exibindo-somente-os-planetas-cujos-nomes-incluam-o-texto-digitado)
+  - [3. Crie um filtro para valores numéricos](#3-crie-um-filtro-para-valores-numéricos)
+  - [4. Não utilize filtros repetidos](#4-não-utilize-filtros-repetidos)
+  - [5. Apague o filtro de valores numéricos](#5-apague-o-filtro-de-valores-numéricos-e-desfaça-as-filtragens-dos-dados-da-tabela-ao-clicar-no-ícone-de-x-de-um-dos-filtro)
+  - [6. Ordene as colunas](#6-ordene-as-colunas-de-forma-ascendente-ou-descendente)
+
+
+- [Durante o desenvolvimento](#durante-o-desenvolvimento)
+- [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+- [Revisando um Pull Request](#revisando-um-pull-request)
+- [Avisos finais](#avisos-finais)
+
+---
+
+## INSTRUÇÕES PARA ENTREGAR SEU PROJETO:
+
+### Antes de começar a desenvolver:
 
 1. Clone o repositório
   * `git clone git@github.com:tryber/sd-0x-project-starwars-datatable-hooks.git`.
@@ -71,36 +111,57 @@ export default StarWarsContext;
 
 ---
 
-## O que deverá ser desenvolvido
+## O QUE DEVERÁ SER DESENVOLVIDO
 
-Você vai refatorar o projeto **StarWars Datatable Filters em React com Redux** (ou criar um do zero), substituindo **Redux** por **Context API e Hooks** para controlar estado.
+Você vai desenvolver uma lista com filtros de planetas do universo de StarWars usando **Context API e Hooks** para controlar os estados globais.
 
-## Desenvolvimento
+---
+
+## COMO DESENVOLVER
 
 Este repositório já contém um _template_ de uma aplicação React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você **poderá** copiar os arquivos que criou ou modificou no projeto anterior para este repositório. Veja [aqui](#copiando-os-arquivos-entre-projetos) instruções de como fazer isso de uma forma fácil.
 
 Caso não tenha realizado o projeto anterior, você deverá implementar todos os requisitos obrigatórios do projeto anterior e os novos requisitos do projeto atual. Contudo, não é necessário primeiro desenvolver o projeto com Redux para então substituí-lo por **Context API e Hooks**.
 
-### Copiando os arquivos entre projetos
+---
 
-Supondo que seus projetos passado e atual estejam, respectivamente, nos diretórios `sd-0x-project-react-redux-starwars-datatable-filters` e `sd-0x-project-starwars-datatable-hooks` dentro do mesmo diretório em sua máquina, execute o comando a seguir para copiar entre projetos.
+## DATA DE ENTREGA
 
-```shell
-cd <diretorio onde estão seus projetos>
-cp -av sd-0x-project-react-redux-starwars-datatable-filters/src/ sd-0x-project-starwars-datatable-hooks/src/
+O projeto deverá ser entregue até a seguinte data para a avaliação final: ``DD/MM/YYYY - 00:00h``.
+
+---
+
+## REQUISITOS DO PROJETO
+
+### Linter
+
+Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
+
+```bash
+npm run lint
 ```
 
-Atente para a barra (`/`) ao final dos nomes dos diretórios. Adapte os comandos com os nomes dos diretórios onde estão seus repositórios em sua máquina local.
+⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
-## Requisitos do projeto
+---
 
-### 1 - Fazer uma requisição para o endpoint `/planets` da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna `residents`
+## LISTA DE REQUISITOS
+
+### 1. Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents`
 
 A tabela deve ser renderizada por um componente chamado `<Table />`. Os dados recebidos da API devem ser salvos num campo chamado `data` do contexto e é daí que a tabela deve lê-los. A requisição deve ser feita num componente separado do componente da tabela.
 
 A tabela deve ter uma primeira linha com os headers e as demais com as informações de cada campo.
 
-### 2 - Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado
+O que será verificado:
+```
+- Realiza uma requisição para a API
+- Preenche a tabela com os dados retornados
+- A tabela deve ter 13 colunas
+- A tabela deve ter uma linha para cada planeta retornado
+```
+
+### 2. Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado
 
 Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida que o nome é digitado, sem ter que apertar um botão para efetuar a filtragem. Por exemplo, se digitar "Tatoo", o planeta "Tatooine" deve ser exibido. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação e o texto digitado deve ser salvo num campo `filters: { filterByName: { name } }`. Por exemplo:
 
@@ -116,7 +177,15 @@ Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida 
 
 O campo de texto deve possuir a propriedade `data-testid='name-filter'` para que a avaliação automatizada funcione.
 
-### 3 - Sua página deve ter um filtro para valores numéricos
+O que será verificado:
+```
+- Renderiza campo de texto para filtro de nomes
+- Filtra planetas que possuem a letra "o" no nome
+- Filtra planetas que possuem a letra "oo" no nome
+- Realiza vários filtros em sequência
+```
+
+### 3. Crie um filtro para valores numéricos
 
 Ele funcionará com três seletores:
 
@@ -150,7 +219,18 @@ Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da 
 }
 ```
 
-### 4 - Sua página não deve utilizar filtros repetidos
+O que será verificado:
+```
+- Renderiza o filtro de coluna
+- Renderiza o filtro de comparação
+- Renderiza o campo para o valor do filtro
+- Renderiza o botão para executar a filtragem
+- Filtra utilizando a comparação "menor que"
+- Filtra utilizando a comparação "maior que"
+- Filtra utilizando a comparação "igual a"
+```
+
+### 4. Não utilize filtros repetidos
 
 Caso um filtro seja totalmente preenchido, um novo filtro de valores numéricos deve ser carregado. Este novo filtro não deve incluir quaisquer colunas que já tenham sido selecionadas em filtros de valores numéricos anteriores. Caso todas as colunas já tenham sido inclusas em filtros anteriores, não deve ser carregado um novo filtro. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação.
 
@@ -178,13 +258,26 @@ Por exemplo: O primeiro filtro tem as seguintes seleções: `population | maior 
 }
 ```
 
-### 5 - Cada filtro de valores numéricos deve ter um ícone de `X` que, ao ser clicado, o apaga e desfaz suas filtragens dos dados da tabela
+O que será verificado:
+```
+- Filtra por população e o remove das opções
+```
+
+### 5. Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` de um dos filtro
+
+O `button` com o ícone de `x` deve existir em cada filtro de valores numéricos.
 
 A coluna que este filtro selecionava deve passar a ficar disponível nos dropdowns dos demais filtros já presentes na tela. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação. Cada filtro deve possuir a propriedade `data-testid='filter'`, com um `button` em seu interior com o texto `X`.
 
-## BÔNUS
+O que será verificado:
+```
+- Adiciona um filtro e verifica se a tabela foi atualizada com as informações filtradas, depois remove o filtro e verifica se os valores da tabela voltaram ao original.
+- Adiciona dois filtros e verifica se a tabela foi atualizada com as informações filtradas, depois remove os filtros e verifica se os valores da tabela voltaram ao original.
+```
 
-### 6 - As colunas da tabela devem ser ordenáveis de forma ascendente ou descendente
+### BÔNUS
+
+### 6 - Ordene as colunas de forma ascendente ou descendente
 
 A informação acerca da ordenação das colunas deve ser armazenada nos campos `filters: { filterByName: { name }, filterByNumericValues = [], order: { column: 'Name', sort: 'ASC'} }`, o campo column representa o nome da coluna a ordenar e a ordem representa a ordenação, sendo 'ASC' ascendente e 'DESC' descendente. Por padrão, a tabela começa ordenada pela coluna 'Name' em ordem ascendente. Por exemplo:
 
@@ -209,11 +302,15 @@ O dropdown deve ser um elemento `select` com a propriedade `data-testid='column-
 
 Adicione o atributo `data-testid` com o valor `planet-name` em todos os elementos da tabela que possuem o nome de um planeta.
 
+O que será verificado:
+```
+- Verifica ordenação inicial
+- Ordena os planetas do mais populoso para o menos populoso
+```
+
 ---
 
-### DURANTE O DESENVOLVIMENTO
-
-⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo CodeClimate estão resolvidas! ⚠
+## DURANTE O DESENVOLVIMENTO
 
 * Faça `commits` das alterações que você fizer no código regularmente;
 
@@ -233,7 +330,7 @@ Adicione o atributo `data-testid` com o valor `planet-name` em todos os elemento
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+## DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
 Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
@@ -249,7 +346,17 @@ Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362
 
 ---
 
-### REVISANDO UM PULL REQUEST
+## ENTREGA
+
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
+
+Link: [Avaliação](https://be-trybe.typeform.com/to/ZTeR4IbH)
+
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no _README_. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
+
+---
+
+## REVISANDO UM PULL REQUEST
 
 Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
