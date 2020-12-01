@@ -3,14 +3,14 @@
     "browser": true,
     "es2020": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": ["plugin:react/recommended", "airbnb", "eslint:recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks"],
+  "plugins": ["react"],
   "rules": {
     "indent": ["error", 2],
     "linebreak-style": 0,
@@ -48,13 +48,13 @@
       }
     ],
     "object-curly-newline": ["off"],
+
     "import/no-extraneous-dependencies": ["off"],
     "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
     "react/default-props-match-prop-types": [
       "error",
       {"allowRequiredDefaults": false}
     ],
-    "react/no-array-index-key": ["off"],
     "react/destructuring-assignment": ["error", "always"],
     "react/forbid-component-props": ["error"],
     "react/forbid-prop-types": ["error"],
@@ -86,7 +86,7 @@
     "react/jsx-indent": [
       "error",
       2,
-      { "checkAttributes": true, "indentLogicalExpressions": true }
+      {"checkAttributes": true, "indentLogicalExpressions": true}
     ],
     "react/jsx-indent-props": ["error", 2],
     "react/jsx-key": ["error"],
@@ -114,8 +114,6 @@
         "logical": "ignore",
         "prop": "ignore"
       }
-    ],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    ]
   }
 }
