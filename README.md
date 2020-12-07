@@ -37,8 +37,6 @@ Nesse projeto, você será capaz de:
   - [4. Não utilize filtros repetidos](#4-não-utilize-filtros-repetidos)
   - [5. Apague o filtro de valores numéricos](#5-apague-o-filtro-de-valores-numéricos-e-desfaça-as-filtragens-dos-dados-da-tabela-ao-clicar-no-ícone-de-x-de-um-dos-filtro)
   - [6. Ordene as colunas](#6-ordene-as-colunas-de-forma-ascendente-ou-descendente)
-
-
 - [Durante o desenvolvimento](#durante-o-desenvolvimento)
 - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
 - [Revisando um Pull Request](#revisando-um-pull-request)
