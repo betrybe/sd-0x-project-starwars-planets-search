@@ -1,7 +1,5 @@
 {
-  "plugins": [
-		"stylelint-order"
-	],
+  "plugins": ["stylelint-order"],
   "rules": {
     "at-rule-empty-line-before": "always",
     "at-rule-name-case": "lower",
