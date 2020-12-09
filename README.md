@@ -15,7 +15,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Boas vindas ao repositório do projeto starwars datatable filters em context api e hooks!](#boas-vindas-ao-repositório-do-projeto-starwars-datatable-filters-em-context-api-e-hooks)
 - [Sumário](#sumário)
 - [Habilidades](#habilidades)
-- [Entregáveis](#enregáveis)
+- [Entregáveis](#entregáveis)
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
   - [Desenvolvimento](#desenvolvimento)
   - [Data de entrega](#data-de-entrega)
