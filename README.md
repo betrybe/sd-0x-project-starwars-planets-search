@@ -15,7 +15,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Boas vindas ao repositório do projeto starwars datatable filters em context api e hooks!](#boas-vindas-ao-repositório-do-projeto-starwars-datatable-filters-em-context-api-e-hooks)
 - [Sumário](#sumário)
 - [Habilidades](#habilidades)
-- [Entregáveis](#enregáveis)
+- [Entregáveis](#entregáveis)
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
   - [Desenvolvimento](#desenvolvimento)
   - [Data de entrega](#data-de-entrega)
@@ -55,7 +55,7 @@ Nesse projeto, você será capaz de:
 
 ## O que deverá ser desenvolvido
 
-Você vai desenvolver uma lista com filtros de planetas do universo de StarWars usando **Context API e Hooks** para controlar os estados globais.
+Você vai desenvolver uma lista com filtros de planetas do universo de Star Wars usando **Context API e Hooks** para controlar os estados globais.
 
 ---
 
