@@ -142,6 +142,7 @@ Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mai
 
 ```bash
 npm run lint
+npm run lint:styles
 ```
 
 ⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
