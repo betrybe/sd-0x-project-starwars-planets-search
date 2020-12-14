@@ -34,7 +34,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
     - [4. Não utilize filtros repetidos](#4-não-utilize-filtros-repetidos)
     - [5. Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de X de um dos filtro](#5-apague-o-filtro-de-valores-numéricos-e-desfaça-as-filtragens-dos-dados-da-tabela-ao-clicar-no-ícone-de-x-de-um-dos-filtro)
     - [Bônus](#bônus)
-    - [6 - Ordene as colunas de forma ascendente ou descendente](#6-ordene-as-colunas-de-forma-ascendente-ou-descendente)
+    - [6. Ordene as colunas de forma ascendente ou descendente](#6-ordene-as-colunas-de-forma-ascendente-ou-descendente)
 - [Avisos Finais](#avisos-finais)
 
 ---
@@ -283,7 +283,7 @@ O que será verificado:
 
 ### Bônus
 
-### 6 - Ordene as colunas de forma ascendente ou descendente
+### 6. Ordene as colunas de forma ascendente ou descendente
 
 A informação acerca da ordenação das colunas deve ser armazenada nos campos `filters: { filterByName: { name }, filterByNumericValues = [], order: { column: 'Name', sort: 'ASC'} }`, o campo column representa o nome da coluna a ordenar e a ordem representa a ordenação, sendo 'ASC' ascendente e 'DESC' descendente. Por padrão, a tabela começa ordenada pela coluna 'Name' em ordem ascendente. Por exemplo:
 
