@@ -147,7 +147,7 @@ npm run lint:styles
 
 ⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
---
+---
 
 # Requisitos do projeto
 
