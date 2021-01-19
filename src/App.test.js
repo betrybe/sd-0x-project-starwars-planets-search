@@ -282,6 +282,7 @@ describe('Não utilize filtros repetidos', () => {
       return child.innerHTML;
     });
     expect(foundColumnFilter).toEqual(expect.arrayContaining(['orbital_period', 'diameter', 'rotation_period', 'surface_water']));
+    expect(foundColumnFilter).toHaveLength(4);
   });
 });
 
