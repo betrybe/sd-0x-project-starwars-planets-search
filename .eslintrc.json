@@ -136,8 +136,6 @@
         "prop": "ignore"
       }
     ],
-    "react-redux/connect-prefer-named-arguments": ["error"],
-    "react-redux/no-unused-prop-types": ["error"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   }
