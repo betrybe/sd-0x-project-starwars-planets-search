@@ -150,6 +150,11 @@ function InfoTable() {
     handle();
   }, [filterByName.name, handle]);
 
+  const renderOptions = (option) => (
+    <option id={ option } key={ option } value={ option }>
+      { option }
+    </option>);
+
   return (
     <div>
       <label htmlFor="filter-planets">
@@ -174,10 +179,7 @@ function InfoTable() {
         <label htmlFor="column-sort">
           <select id="column-sort" data-testid="column-sort">
             {
-              headersTable.map((option) => (
-                <option id={ option } key={ option } value={ option }>
-                  { option }
-                </option>))
+              headersTable.map(renderOptions)
             }
           </select>
         </label>
@@ -217,10 +219,7 @@ function InfoTable() {
         <label htmlFor="column">
           <select id="column" data-testid="column-filter">
             {
-              options.reverse().map((option) => (
-                <option id={ option } key={ option } value={ option }>
-                  { option }
-                </option>))
+              options.reverse().map(renderOptions)
             }
           </select>
         </label>

@@ -47,8 +47,6 @@
       }
     ],
     "max-params": ["error", 4],
-    "max-lines": ["error", 250],
-    "max-lines-per-function": ["error", 20],
     "no-class/no-class": 2,
     "complexity": ["error", 15],
     "object-curly-newline": ["off"],
