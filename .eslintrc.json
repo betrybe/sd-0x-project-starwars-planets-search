@@ -10,7 +10,7 @@
     },
     "sourceType": "module"
   },
-  "plugins": ["react", "react-redux", "react-hooks", "sonarjs", "no-class"],
+  "plugins": ["react", "react-hooks", "sonarjs", "no-class"],
   "rules": {
     "indent": ["error", 2],
     "linebreak-style": 0,
