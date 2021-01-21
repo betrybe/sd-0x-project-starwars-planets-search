@@ -10,7 +10,7 @@
     },
     "sourceType": "module"
   },
-  "plugins": ["react", "react-redux", "react-hooks", "sonarjs", "no-class"],
+  "plugins": ["react", "react-hooks", "sonarjs", "no-class"],
   "rules": {
     "indent": ["error", 2],
     "linebreak-style": 0,
@@ -47,8 +47,6 @@
       }
     ],
     "max-params": ["error", 4],
-    "max-lines": ["error", 250],
-    "max-lines-per-function": ["error", 20],
     "no-class/no-class": 2,
     "complexity": ["error", 15],
     "object-curly-newline": ["off"],
@@ -136,8 +134,6 @@
         "prop": "ignore"
       }
     ],
-    "react-redux/connect-prefer-named-arguments": ["error"],
-    "react-redux/no-unused-prop-types": ["error"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   }
