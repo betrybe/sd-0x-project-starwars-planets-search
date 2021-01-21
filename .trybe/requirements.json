@@ -12,7 +12,7 @@
     "description": "4 - Não utilize filtros repetidos",
     "bonus": false
   }, {
-    "description": "5 - Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` de um dos filtro",
+    "description": "5 - Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` de um dos filtros",
     "bonus": false
   }, {
     "description": "6 - Ordene as colunas de forma ascendente ou descendente",
