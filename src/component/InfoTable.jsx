@@ -148,7 +148,7 @@ function InfoTable() {
 
   useEffect(() => {
     handle();
-  }, [filterByName.name]);
+  }, [filterByName.name, handle]);
 
   return (
     <div>

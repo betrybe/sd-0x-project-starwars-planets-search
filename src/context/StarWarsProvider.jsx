@@ -57,7 +57,7 @@ function Provider({ children }) {
     return list.reverse();
   };
   // chamada da api
-  const apiPlanets = async () => {
+  const apiPlanets = useCallback(async () => {
     const response = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
     const responseJson = await response.json();
     const infoPlanets = responseJson.results.map((info) => {
@@ -68,11 +68,11 @@ function Provider({ children }) {
     setPlanets(ordened(infoPlanets, 'name', 'ASC'));
     setFilteredPlanets(infoPlanets);
     setHeadersTable(Object.keys(infoPlanets[0]));
-  };
+  });
 
   useEffect(() => {
     apiPlanets();
-  }, []);
+  }, [apiPlanets]);
 
   const data = {
     planets,
