@@ -36,7 +36,7 @@ function Provider({ children }) {
       let bColumn;
       const zero = 0;
       const negative = -1;
-      if (regexOptions.test(a[column]) || regexOptions.test(a[column])) {
+      if (regexOptions.test(a[column])) {
         aColumn = parseInt(a[column], 0);
         bColumn = parseInt(b[column], 0);
       } else {
