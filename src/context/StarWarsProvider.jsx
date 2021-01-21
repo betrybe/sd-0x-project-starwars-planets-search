@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import StarWarsContext from './StarWarsContext';
 
@@ -30,7 +30,7 @@ function Provider({ children }) {
 
   const regexOptions = new RegExp('^(\\d*)$', 'i');
 
-  const ordened = useCallback((list, column, sort) => {
+  const ordened = (list, column, sort) => {
     list.sort((a, b) => {
       let aColumn;
       let bColumn;
@@ -55,9 +55,9 @@ function Provider({ children }) {
       return list;
     }
     return list.reverse();
-  });
+  };
   // chamada da api
-  const apiPlanets = useCallback(async () => {
+  const apiPlanets = async () => {
     const response = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
     const responseJson = await response.json();
     const infoPlanets = responseJson.results.map((info) => {
@@ -68,7 +68,7 @@ function Provider({ children }) {
     setPlanets(ordened(infoPlanets, 'name', 'ASC'));
     setFilteredPlanets(infoPlanets);
     setHeadersTable(Object.keys(infoPlanets[0]));
-  }, [ordened]);
+  };
 
   useEffect(() => {
     apiPlanets();
