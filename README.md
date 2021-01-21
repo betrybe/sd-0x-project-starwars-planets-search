@@ -28,13 +28,13 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Linter](#linter)
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Lista de requisitos](#lista-de-requisitos)
-    - [1. Faça uma requisição para o endpoint /planets da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna residents](#1-faça-uma-requisição-para-o-endpoint-planets-da-api-de-star-wars-e-preencha-uma-tabela-com-os-dados-retornados-com-exceção-dos-da-coluna-residents)
-    - [2. Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado](#2-filtre-a-tabela-através-de-um-texto-inserido-num-campo-de-texto-exibindo-somente-os-planetas-cujos-nomes-incluam-o-texto-digitado)
-    - [3. Crie um filtro para valores numéricos](#3-crie-um-filtro-para-valores-numéricos)
-    - [4. Não utilize filtros repetidos](#4-não-utilize-filtros-repetidos)
-    - [5. Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de X de um dos filtro](#5-apague-o-filtro-de-valores-numéricos-e-desfaça-as-filtragens-dos-dados-da-tabela-ao-clicar-no-ícone-de-x-de-um-dos-filtro)
+    - [1 - Faça uma requisição para o endpoint /planets da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna residents](#1---faça-uma-requisição-para-o-endpoint-planets-da-api-de-star-wars-e-preencha-uma-tabela-com-os-dados-retornados-com-exceção-dos-da-coluna-residents)
+    - [2 - Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado](#2---filtre-a-tabela-através-de-um-texto-inserido-num-campo-de-texto-exibindo-somente-os-planetas-cujos-nomes-incluam-o-texto-digitado)
+    - [3 - Crie um filtro para valores numéricos](#3---crie-um-filtro-para-valores-numéricos)
+    - [4 - Não utilize filtros repetidos](#4---não-utilize-filtros-repetidos)
+    - [5 - Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de X de um dos filtro](#5---apague-o-filtro-de-valores-numéricos-e-desfaça-as-filtragens-dos-dados-da-tabela-ao-clicar-no-ícone-de-x-de-um-dos-filtro)
     - [Bônus](#bônus)
-    - [6 - Ordene as colunas de forma ascendente ou descendente](#6-ordene-as-colunas-de-forma-ascendente-ou-descendente)
+    - [6 - Ordene as colunas de forma ascendente ou descendente](#6---ordene-as-colunas-de-forma-ascendente-ou-descendente)
 - [Avisos Finais](#avisos-finais)
 
 ---
@@ -61,9 +61,7 @@ Você vai desenvolver uma lista com filtros de planetas do universo de Star Wars
 
 ## Desenvolvimento
 
-Este repositório já contém um _template_ de uma aplicação React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você **poderá** copiar os arquivos que criou ou modificou no projeto anterior para este repositório. Veja [aqui](#copiando-os-arquivos-entre-projetos) instruções de como fazer isso de uma forma fácil.
-
-Caso não tenha realizado o projeto anterior, você deverá implementar todos os requisitos obrigatórios do projeto anterior e os novos requisitos do projeto atual. Contudo, não é necessário primeiro desenvolver o projeto com Redux para então substituí-lo por **Context API e Hooks**.
+Este repositório já contém um _template_ de uma aplicação React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você **poderá** criara a sua branch e iniciar o trabalho.
 
 ---
 
@@ -138,21 +136,22 @@ Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-enginee
 
 ## Linter
 
-Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
+Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint` e o `Stylelint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
 
 ```bash
 npm run lint
+npm run lint:styles
 ```
 
 ⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
---
+---
 
 # Requisitos do projeto
 
 ## Lista de requisitos
 
-### 1. Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents`
+### 1 - Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents`
 
 A tabela deve ser renderizada por um componente chamado `<Table />`. Os dados recebidos da API devem ser salvos num campo chamado `data` do contexto e é daí que a tabela deve lê-los. A requisição deve ser feita num componente separado do componente da tabela.
 
@@ -166,7 +165,7 @@ O que será verificado:
 - A tabela deve ter uma linha para cada planeta retornado
 ```
 
-### 2. Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado
+### 2 - Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado
 
 Ele deve atualizar a tabela com os planetas que se encaixam no filtro à medida que o nome é digitado, sem ter que apertar um botão para efetuar a filtragem. Por exemplo, se digitar "Tatoo", o planeta "Tatooine" deve ser exibido. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação e o texto digitado deve ser salvo num campo `filters: { filterByName: { name } }`. Por exemplo:
 
@@ -190,7 +189,7 @@ O que será verificado:
 - Realiza vários filtros em sequência
 ```
 
-### 3. Crie um filtro para valores numéricos
+### 3 - Crie um filtro para valores numéricos
 
 Ele funcionará com três seletores:
 
@@ -235,7 +234,7 @@ O que será verificado:
 - Filtra utilizando a comparação "igual a"
 ```
 
-### 4. Não utilize filtros repetidos
+### 4 - Não utilize filtros repetidos
 
 Caso um filtro seja totalmente preenchido, um novo filtro de valores numéricos deve ser carregado. Este novo filtro não deve incluir quaisquer colunas que já tenham sido selecionadas em filtros de valores numéricos anteriores. Caso todas as colunas já tenham sido inclusas em filtros anteriores, não deve ser carregado um novo filtro. Você deve usar **Context API e Hooks** para fazer o gerenciamento do estado da aplicação.
 
@@ -268,7 +267,7 @@ O que será verificado:
 - Filtra por população e o remove das opções
 ```
 
-### 5. Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` de um dos filtro
+### 5 - Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` de um dos filtro
 
 O `button` com o ícone de `x` deve existir em cada filtro de valores numéricos.
 

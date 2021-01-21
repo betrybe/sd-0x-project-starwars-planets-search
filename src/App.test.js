@@ -28,7 +28,7 @@ const mockFetch = () => {
     }));
 }
 
-describe('Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents`', () => {
+describe('1 - Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents`', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -84,7 +84,7 @@ describe('Faça uma requisição para o endpoint `/planets` da API de Star Wars 
   });
 });
 
-describe('Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado', () => {
+describe('2 - Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -159,7 +159,7 @@ describe('Filtre a tabela através de um texto, inserido num *campo de texto*, e
   });
 });
 
-describe('Crie um filtro para valores numéricos', () => {
+describe('3 - Crie um filtro para valores numéricos', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -249,7 +249,7 @@ describe('Crie um filtro para valores numéricos', () => {
   });
 });
 
-describe('Não utilize filtros repetidos', () => {
+describe('4 - Não utilize filtros repetidos', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -285,7 +285,7 @@ describe('Não utilize filtros repetidos', () => {
   });
 });
 
-describe('Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` de um dos filtro', () => {
+describe('5 - Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` de um dos filtro', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -337,7 +337,7 @@ describe('Apague o filtro de valores numéricos e desfaça as filtragens dos dad
   });
 });
 
-describe('Ordene as colunas de forma ascendente ou descendente', () => {
+describe('6 - Ordene as colunas de forma ascendente ou descendente', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
