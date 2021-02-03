@@ -351,7 +351,7 @@ describe('6 - Ordene as colunas de forma ascendente ou descendente', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('ordene os planetas do mais populoso para o menos populoso', async () => {
+  it('Ordene os planetas do mais populoso para o menos populoso', async () => {
     await act(async () => {
       render(<App />);
     });
