@@ -164,8 +164,8 @@ O que será verificado:
 ```
 - Realiza uma requisição para a API
 - Preenche a tabela com os dados retornados
-- A tabela deve ter 13 colunas
-- A tabela deve ter uma linha para cada planeta retornado
+- Verifica se a tabela tem 13 colunas
+- Verifica se a tabela tem uma linha para cada planeta retornado
 ```
 
 ### 2 - Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado
@@ -186,8 +186,8 @@ O campo de texto deve possuir a propriedade `data-testid='name-filter'` para que
 
 O que será verificado:
 ```
-- Renderiza campo de texto para filtro de nomes
-- Filtra planetas que possuem a letra "o" no nome
+- Renderiza o campo de texto para o filtro de nomes
+- Filtra os planetas que possuem a letra "o" no nome
 - Filtra planetas que possuem a letra "oo" no nome
 - Realiza vários filtros em sequência
 ```
