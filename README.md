@@ -12,8 +12,6 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 # Sumário
 
-- [Boas vindas ao repositório do projeto starwars datatable filters em context api e hooks!](#boas-vindas-ao-repositório-do-projeto-starwars-datatable-filters-em-context-api-e-hooks)
-- [Sumário](#sumário)
 - [Habilidades](#habilidades)
 - [Entregáveis](#entregáveis)
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
@@ -22,8 +20,6 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Instruções para entregar seu projeto:](#instruções-para-entregar-seu-projeto)
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
-    - [Revisando um pull request](#revisando-um-pull-request)
 - [Como desenvolver](#como-desenvolver)
   - [Linter](#linter)
 - [Requisitos do projeto](#requisitos-do-projeto)
@@ -38,6 +34,8 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
     
     `Requisitos bônus:`
     - [6 - Ordene as colunas de forma ascendente ou descendente](#6---ordene-as-colunas-de-forma-ascendente-ou-descendente)
+- [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+- [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos Finais](#avisos-finais)
 
 ---
@@ -117,21 +115,6 @@ Este repositório já contém um _template_ de uma aplicação React criado e co
   3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
   4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
   5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
-
-## Depois de terminar o desenvolvimento (opcional)
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
-
-### Revisando um pull request
-
-Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
 ---
 
@@ -316,6 +299,23 @@ O que será verificado:
 - Verifica ordenação inicial
 - Ordena os planetas do mais populoso para o menos populoso
 ```
+
+---
+
+# Depois de terminar o desenvolvimento (opcional)
+
+Para **"entregar"** seu projeto, siga os passos a seguir:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`
+
+---
+
+# Revisando um pull request
+
+Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
 ---
 

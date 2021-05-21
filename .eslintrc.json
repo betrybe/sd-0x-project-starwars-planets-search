@@ -1,4 +1,13 @@
 {
-  "root": true,
-  "extends": ["trybe-frontend"]
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": ["trybe-frontend"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  }
 }
