@@ -167,11 +167,14 @@ npm test
 
 Para rodar apenas um teste, basta a utilização da função `.only` após o describe. Com isso, será possível que apenas um requisito rode localmente e seja avaliado.
 
+![image](describe-only.png)
 ![image](only-all-green.png)
 
-Caso queira avaliar apenas um tópico do requisito, você também pode usar o `.only` após o `test`.
+Caso queira avaliar apenas um tópico do requisito, você também pode usar o `.only` após o `it`.
 
+![image](it-only.png)
 ![image](only-one-green.png)
+
 
 
 # Requisitos do projeto
