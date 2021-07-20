@@ -133,6 +133,48 @@ npm run lint:styles
 
 ---
 
+## Execução de testes unitários
+
+Neste projeto utilizamos a [React Testing Library (RTL)](https://testing-library.com/docs/react-testing-library/intro) para execução dos testes unitários.
+
+Em alguns dos [Requisitos do projeto](#requisitos-do-projeto) será pedido que você coloque o atributo `data-testid` nos elementos HTML. Isso acontece pois a RTL utiliza esse atributo para poder verificar a solução proposta.
+
+Por exemplo, se o requisito pedir "crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`", você poderá criar:
+
+```html
+<button data-testid="my-action"></button>
+```
+
+ou
+
+```html
+<a data-testid="my-action"><a/>
+```
+
+O atributo `data-testid="my-action"` servirá para a React Testing Library identificar o elemento e, dessa forma, será possível realizar os testes unitários focados no comportamento da aplicação.
+
+**Importante:** Em alguns requisitos, utilizamos o método `getByRole` para poder selecionar os elementos de forma semântica. Portanto atente-se às instruções de cada requisito. Por exemplo, se o requisito pedir explicitamente um button, você deverá utilizar exatamente esse elemento.
+
+Para verificar se seu projeto atende aos requisitos, você pode executar todos os testes unitários localmente, executando o comando:
+
+```bash
+npm test
+```
+
+### Dica: desativando testes
+
+Para rodar apenas um teste, basta a utilização da função `.only` após o describe. Com isso, será possível que apenas um requisito rode localmente e seja avaliado.
+
+![image](describe-only.png)
+![image](only-all-green.png)
+
+Caso queira avaliar apenas um tópico do requisito, você também pode usar o `.only` após o `it`.
+
+![image](it-only.png)
+![image](only-one-green.png)
+
+
+
 # Requisitos do projeto
 
 ## Lista de requisitos
